@@ -1,9 +1,23 @@
 :root {
+    /* Light theme variables */
     --primary-color: #6c5ce7;
     --secondary-color: #a8a4e6;
     --background-color: #f8f9fa;
     --text-color: #2d3436;
     --section-bg: #ffffff;
+    --nav-bg: rgba(255, 255, 255, 0.9);
+    --card-shadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+    /* Dark theme variables */
+    --primary-color: #a8a4e6;
+    --secondary-color: #6c5ce7;
+    --background-color: #1a1a1a;
+    --text-color: #f8f9fa;
+    --section-bg: #2d2d2d;
+    --nav-bg: rgba(45, 45, 45, 0.9);
+    --card-shadow: rgba(0, 0, 0, 0.3);
 }
 
 * {
@@ -66,7 +80,7 @@ section {
     background: var(--section-bg);
     border-radius: 1rem;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px var(--card-shadow);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
@@ -138,7 +152,7 @@ section {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(255, 255, 255, 0.9);
+    background: var(--nav-bg);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1000;
@@ -150,7 +164,12 @@ section {
     margin: 0 auto;
     padding: 1rem 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
     gap: 2rem;
 }
 
@@ -166,6 +185,45 @@ section {
 .nav-content a:hover {
     color: var(--primary-color);
     background: rgba(108, 92, 231, 0.1);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.theme-toggle:hover {
+    background-color: rgba(108, 92, 231, 0.1);
+    transform: rotate(15deg);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    transition: transform 0.3s ease;
+}
+
+.icon-sun {
+    display: none;
+}
+
+[data-theme="dark"] .icon-sun {
+    display: block;
+}
+
+[data-theme="dark"] .icon-moon {
+    display: none;
 }
 
 /* Scroll Animations */
