@@ -2,11 +2,14 @@
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show');
+            entry.target.classList.add('visible');
+            // Once the animation is triggered, we can stop observing the element
+            observer.unobserve(entry.target);
         }
     });
 }, {
-    threshold: 0.1
+    threshold: 0.15,
+    rootMargin: '50px'
 });
 
 // Theme toggle functionality
@@ -32,8 +35,9 @@ function toggleTheme() {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize scroll animations
-    const elements = document.querySelectorAll('.scroll-animation');
-    elements.forEach(el => observer.observe(el));
+    document.querySelectorAll('.scroll-animation').forEach(el => {
+        observer.observe(el);
+    });
 
     // Initialize theme
     initTheme();
