@@ -1,23 +1,25 @@
 :root {
     /* Light theme variables */
-    --primary-color: #6c5ce7;
-    --secondary-color: #a8a4e6;
-    --background-color: #f8f9fa;
-    --text-color: #2d3436;
-    --section-bg: #ffffff;
-    --nav-bg: rgba(255, 255, 255, 0.9);
+    --primary-color: #6366f1;
+    --secondary-color: #818cf8;
+    --background-color: #f8fafc;
+    --text-color: #1e293b;
+    --section-bg: rgba(255, 255, 255, 0.7);
+    --nav-bg: rgba(255, 255, 255, 0.8);
     --card-shadow: rgba(0, 0, 0, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.4);
 }
 
 [data-theme="dark"] {
     /* Dark theme variables */
-    --primary-color: #a8a4e6;
-    --secondary-color: #6c5ce7;
-    --background-color: #1a1a1a;
-    --text-color: #f8f9fa;
-    --section-bg: #2d2d2d;
-    --nav-bg: rgba(45, 45, 45, 0.9);
+    --primary-color: #818cf8;
+    --secondary-color: #6366f1;
+    --background-color: #0f172a;
+    --text-color: #f1f5f9;
+    --section-bg: rgba(30, 41, 59, 0.7);
+    --nav-bg: rgba(30, 41, 59, 0.8);
     --card-shadow: rgba(0, 0, 0, 0.3);
+    --glass-border: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -47,7 +49,9 @@ header {
     align-items: center;
     text-align: center;
     padding: 5rem 2rem;
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    background: 
+        radial-gradient(circle at top left, var(--primary-color), transparent 70%),
+        radial-gradient(circle at bottom right, var(--secondary-color), transparent 70%);
     color: white;
     position: relative;
 }
@@ -81,11 +85,13 @@ section {
     background: var(--section-bg);
     border-radius: 1rem;
     padding: 1.5rem;
-    box-shadow: 0 4px 6px var(--card-shadow);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px var(--card-shadow);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
     overflow: hidden;
-    border: 2px solid transparent;
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .portfolio-item::before {
@@ -134,18 +140,26 @@ section {
 }
 
 .contact-links a {
-    color: var(--primary-color);
+    color: var(--text-color);
     text-decoration: none;
     font-size: 1.1rem;
-    transition: color 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 0.5rem;
-    border: 2px solid var(--primary-color);
+    transition: all 0.3s ease;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    background: var(--section-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .contact-links a:hover {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--card-shadow);
 }
 
 .navbar {
@@ -154,10 +168,10 @@ section {
     left: 0;
     right: 0;
     background: var(--nav-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
     z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--glass-border);
 }
 
 .nav-content {
@@ -213,6 +227,8 @@ section {
     height: 24px;
     fill: currentColor;
     transition: transform 0.3s ease;
+    margin-right: 0.5rem;
+    vertical-align: middle;
 }
 
 .icon-sun {
@@ -229,27 +245,79 @@ section {
 
 /* Profile Section Styles */
 .profile-section {
+    margin-bottom: 2rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 6rem;
-    left: 2rem;
     gap: 1rem;
 }
 
-.profile-outline {
-    color: white;
-    transform: scale(1);
-    transition: transform 0.3s ease;
-    margin-bottom: 0;
+.profile-image-container {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 1rem;
+    animation: float 6s ease-in-out infinite;
 }
 
-.profile-name {
-    font-size: 1.8rem;
-    color: white;
-    margin: 0;
+.profile-image-container::after {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border-radius: 50%;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    z-index: -1;
+    opacity: 0.5;
+    filter: blur(10px);
+}
+
+.profile-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tag {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.875rem;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cta-primary, .cta-secondary {
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    text-decoration: none;
     font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.cta-primary {
+    background: white;
+    color: var(--primary-color);
+}
+
+.cta-secondary {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-primary:hover, .cta-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Scroll Animation Styles */
@@ -282,7 +350,7 @@ section {
     
     .contact-links {
         flex-direction: column;
-        align-items: center;
+        align-items: stretch;
     }
     
     .nav-content {
@@ -295,4 +363,15 @@ section {
         font-size: 0.9rem;
         padding: 0.4rem 0.8rem;
     }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
