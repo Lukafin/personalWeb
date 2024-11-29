@@ -33,12 +33,14 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: soleil, -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0.01em;
 }
 
 html {
@@ -60,10 +62,15 @@ header {
     position: relative;
 }
 
+header h1, h2, h3, .nav-links a {
+    font-family: soleil, sans-serif;
+}
+
 header h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    letter-spacing: 0.01em;
 }
 
 header p {
@@ -134,6 +141,10 @@ section {
 
 .portfolio-item:hover p {
     transform: translateY(-2px);
+}
+
+.portfolio-item p {
+    letter-spacing: 0.01em;
 }
 
 .contact-links {
@@ -225,13 +236,14 @@ section {
 }
 
 .nav-links a {
+    font-weight: 500;
     color: var(--text-color);
     text-decoration: none;
-    font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
     white-space: nowrap;
+    letter-spacing: 0.02em;
 }
 
 .nav-links a:hover {
@@ -278,6 +290,16 @@ section {
 
 [data-theme="dark"] .icon-moon {
     display: none;
+}
+
+h2 {
+    font-weight: 600;
+    letter-spacing: 0.015em;
+}
+
+h3 {
+    font-weight: 600;
+    letter-spacing: 0.015em;
 }
 
 @media (max-width: 768px) {
@@ -438,11 +460,6 @@ section {
     }
 }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
