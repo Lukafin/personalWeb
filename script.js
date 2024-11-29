@@ -53,8 +53,8 @@ const translations = {
         'android-tech': 'Kotlin, Java, Jetpack Compose, Material Design, Play Console',
         'mobile-arch': 'Mobile Architecture',
         'mobile-arch-tech': 'System Design, Performance Optimization, Security, CI/CD',
-        'kotlin_multiplatform': 'Kotlin Multiplatform',
-        'footer': 'Designed & Built by Luka Finžgar'
+        'kotlin-multiplatform': 'Kotlin Multiplatform',
+        'kotlin-multiplatform-desc': 'Cross-platform development for iOS, Android, and Web using Kotlin'
     },
     de: {
         'portfolio': 'Projekte',
@@ -75,8 +75,8 @@ const translations = {
         'android-tech': 'Kotlin, Java, Jetpack Compose, Material Design, Play Console',
         'mobile-arch': 'Mobile Architektur',
         'mobile-arch-tech': 'System Design, Performance-Optimierung, Sicherheit, CI/CD',
-        'kotlin_multiplatform': 'Kotlin Multiplatform',
-        'footer': 'Designed & Entwickelt von Luka Finžgar'
+        'kotlin-multiplatform': 'Kotlin Multiplatform',
+        'kotlin-multiplatform-desc': 'Plattformübergreifende Entwicklung für iOS, Android und Web mit Kotlin'
     }
 };
 
@@ -126,6 +126,9 @@ function setLanguage(lang) {
     
     expertiseItems[2].querySelector('h3').textContent = translations[lang]['mobile-arch'];
     expertiseItems[2].querySelector('p').textContent = translations[lang]['mobile-arch-tech'];
+    
+    expertiseItems[3].querySelector('h3').textContent = translations[lang]['kotlin-multiplatform'];
+    expertiseItems[3].querySelector('p').textContent = translations[lang]['kotlin-multiplatform-desc'];
 
     // Update section headings
     document.querySelector('#portfolio h2').textContent = translations[lang]['portfolio'];
@@ -133,7 +136,7 @@ function setLanguage(lang) {
     document.querySelector('#contact h2').textContent = translations[lang]['contact'];
 
     // Update footer
-    document.querySelector('footer p').textContent = translations[lang]['footer'];
+    //document.querySelector('footer p').textContent = translations[lang]['footer'];
 }
 
 // Add click event listeners to language buttons
