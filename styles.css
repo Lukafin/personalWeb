@@ -54,8 +54,8 @@ header {
     text-align: center;
     padding: 5rem 2rem;
     background: 
-        radial-gradient(circle at top left, #A98467, transparent 70%),
-        radial-gradient(circle at bottom right, #6B705C, transparent 70%);
+        radial-gradient(circle at top left, #DCD59A, transparent 70%),
+        radial-gradient(circle at bottom right, #A98467, transparent 70%);
     color: var(--text-color);
     position: relative;
 }
@@ -148,22 +148,15 @@ section {
     text-decoration: none;
     font-size: 1.1rem;
     transition: all 0.3s ease;
-    padding: 0.75rem 1.5rem;
-    border-radius: 0.75rem;
-    background: var(--section-bg);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid var(--glass-border);
+    padding: 0.75rem 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .contact-links a:hover {
-    background: var(--accent-color);
-    color: white;
+    color: var(--accent-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(169, 132, 103, 0.2);
 }
 
 .navbar {
@@ -445,6 +438,11 @@ section {
     }
 }
 
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
+}
 @keyframes float {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }

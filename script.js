@@ -53,6 +53,7 @@ const translations = {
         'android-tech': 'Kotlin, Java, Jetpack Compose, Material Design, Play Console',
         'mobile-arch': 'Mobile Architecture',
         'mobile-arch-tech': 'System Design, Performance Optimization, Security, CI/CD',
+        'kotlin_multiplatform': 'Kotlin Multiplatform',
         'footer': 'Designed & Built by Luka Finžgar'
     },
     de: {
@@ -74,6 +75,7 @@ const translations = {
         'android-tech': 'Kotlin, Java, Jetpack Compose, Material Design, Play Console',
         'mobile-arch': 'Mobile Architektur',
         'mobile-arch-tech': 'System Design, Performance-Optimierung, Sicherheit, CI/CD',
+        'kotlin_multiplatform': 'Kotlin Multiplatform',
         'footer': 'Designed & Entwickelt von Luka Finžgar'
     }
 };
