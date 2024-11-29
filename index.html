@@ -14,18 +14,40 @@
     <nav class="navbar">
         <div class="nav-content">
             <div class="nav-links">
-                <a href="#portfolio">Featured Projects</a>
-                <a href="#expertise">Technical Expertise</a>
-                <a href="#contact">Let's Connect</a>
+                <a href="#portfolio" data-en="Featured Projects" data-de="Projekte">Featured Projects</a>
+                <a href="#expertise" data-en="Technical Expertise" data-de="Fachkenntnisse">Technical Expertise</a>
+                <a href="#contact" data-en="Let's Connect" data-de="Kontakt">Let's Connect</a>
             </div>
-            <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0-2c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1s-1 .45-1 1v2c0 .55.45 1 1 1zm0 12c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1zM4 13H2c-.55 0-1-.45-1-1s.45-1 1-1h2c.55 0 1 .45 1 1s-.45 1-1 1zm18-2h-2c-.55 0-1 .45-1 1s.45 1 1 1h2c.55 0 1-.45 1-1s-.45-1-1-1zM5.64 7.05l-1.41-1.41c-.39-.39-.39-1.02 0-1.41s1.02-.39 1.41 0l1.41 1.41c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0zm12.72 12.72l-1.41-1.41c-.39-.39-.39-1.02 0-1.41s1.02-.39 1.41 0l1.41 1.41c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0zM18.36 7.05c-.39-.39-.39-1.02 0-1.41l1.41-1.41c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41l-1.41 1.41c-.39.39-1.02.39-1.41 0zM5.64 19.77c-.39-.39-.39-1.02 0-1.41l1.41-1.41c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41l-1.41 1.41c-.39.39-1.02.39-1.41 0z"/>
-                </svg>
-                <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M12.1 22c-0.3 0-0.6 0-0.9 0-5.5-0.5-9.5-5.4-9-10.9 0.4-4.8 4.2-8.6 9-9 0.4 0 0.8 0.2 1 0.5 0.2 0.3 0.2 0.8-0.1 1.1-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 0.3-0.2 0.7-0.3 1.1-0.1 0.3 0.2 0.5 0.6 0.5 1 -0.2 2.7-1.5 5.1-3.6 6.8C16.6 21.2 14.4 22 12.1 22zM9.3 4.4c-2.9 1-5 3.6-5.2 6.8-0.4 4.4 2.8 8.3 7.2 8.7 2.1 0.2 4.2-0.4 5.8-1.8 1.1-0.9 1.9-2.1 2.4-3.4-2.5 0.9-5.3 0.5-7.5-1.1C9.2 11.4 8.1 7.7 9.3 4.4z"/>
-                </svg>
-            </button>
+            <div class="nav-controls">
+                <div class="language-switcher">
+                    <button id="en-lang" class="lang-btn" aria-label="Switch to English">
+                        <svg class="flag-icon" viewBox="0 0 640 480">
+                            <g fill-rule="evenodd">
+                                <path fill="#012169" d="M0 0h640v480H0z"/>
+                                <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0h75z"/>
+                                <path fill="#C8102E" d="m424 281 216 159v40L369 281h55zm-184 20 6 35L54 480H0l240-179zM640 0v3L391 191l2-44L590 0h50zM0 0l239 176h-60L0 42V0z"/>
+                                <path fill="#FFF" d="M241 0v480h160V0H241zM0 160v160h640V160H0z"/>
+                                <path fill="#C8102E" d="M0 193v96h640v-96H0zM273 0v480h96V0h-96z"/>
+                            </g>
+                        </svg>
+                    </button>
+                    <button id="de-lang" class="lang-btn" aria-label="Switch to German">
+                        <svg class="flag-icon" viewBox="0 0 640 480">
+                            <path fill="#FFCE00" d="M0 320h640v160H0z"/>
+                            <path d="M0 0h640v160H0z"/>
+                            <path fill="#D00" d="M0 160h640v160H0z"/>
+                        </svg>
+                    </button>
+                </div>
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0-2c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1s-1 .45-1 1v2c0 .55.45 1 1 1zm0 12c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1zM4 13H2c-.55 0-1-.45-1-1s.45-1 1-1h2c.55 0 1 .45 1 1s-.45 1-1 1zm18-2h-2c-.55 0-1 .45-1 1s.45 1 1 1h2c.55 0 1-.45 1-1s-.45-1-1-1zM5.64 7.05l-1.41-1.41c-.39-.39-.39-1.02 0-1.41s1.02-.39 1.41 0l1.41 1.41c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0zm12.72 12.72l-1.41-1.41c-.39-.39-.39-1.02 0-1.41s1.02-.39 1.41 0l1.41 1.41c.39.39.39 1.02 0 1.41s-1.02.39-1.41 0zM18.36 7.05c-.39-.39-.39-1.02 0-1.41l1.41-1.41c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41l-1.41 1.41c-.39.39-1.02.39-1.41 0zM5.64 19.77c-.39-.39-.39-1.02 0-1.41l1.41-1.41c.39-.39 1.02-.39 1.41 0s.39 1.02 0 1.41l-1.41 1.41c-.39.39-1.02.39-1.41 0z"/>
+                    </svg>
+                    <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12.1 22c-0.3 0-0.6 0-0.9 0-5.5-0.5-9.5-5.4-9-10.9 0.4-4.8 4.2-8.6 9-9 0.4 0 0.8 0.2 1 0.5 0.2 0.3 0.2 0.8-0.1 1.1-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 0.3-0.2 0.7-0.3 1.1-0.1 0.3 0.2 0.5 0.6 0.5 1 -0.2 2.7-1.5 5.1-3.6 6.8C16.6 21.2 14.4 22 12.1 22zM9.3 4.4c-2.9 1-5 3.6-5.2 6.8-0.4 4.4 2.8 8.3 7.2 8.7 2.1 0.2 4.2-0.4 5.8-1.8 1.1-0.9 1.9-2.1 2.4-3.4-2.5 0.9-5.3 0.5-7.5-1.1C9.2 11.4 8.1 7.7 9.3 4.4z"/>
+                    </svg>
+                </button>
+            </div>
         </div>
     </nav>
 
