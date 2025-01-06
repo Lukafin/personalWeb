@@ -38,45 +38,45 @@ const translations = {
         'portfolio': 'Featured Projects',
         'expertise': 'Technical Expertise',
         'contact': "Let's Connect",
-        'description': 'With 15 years of experience crafting exceptional iOS and Android applications, I bring your mobile vision to life with clean code and stunning design.',
+        'description': 'Curious creature aiming to build systems that would make our everyday lives easier. With extensive experience in mobile development, I bring your mobile vision to life with clean code and stunning design.',
         'view-projects': 'View Projects',
         'get-in-touch': 'Get in Touch',
-        'health-app-title': 'Health & Fitness App',
-        'health-app-desc': 'A comprehensive fitness tracking application built with Swift for iOS, featuring real-time workout tracking, nutrition planning, and social features.',
-        'ecommerce-title': 'E-commerce Platform',
-        'ecommerce-desc': 'A high-performance Android shopping app handling millions of daily transactions with a focus on user experience and security.',
-        'social-title': 'Social Media App',
-        'social-desc': 'Native mobile application with real-time messaging and media sharing capabilities, optimized for both iOS and Android platforms.',
+        'toshl-title': 'Toshl Finance',
+        'toshl-desc': 'Working on personal finance management app Toshl for iOS and Android since December 2018. Helping users manage their finances effectively through intuitive mobile interfaces.',
+        'carlock-title': 'CarLock',
+        'carlock-desc': 'Co-founded and developed CarLock from January 2013 to November 2015. Created Android and iOS apps that displayed driving style and other data from a device in the car, enhancing vehicle security and driver awareness.',
+        'taxi-title': 'KjeSiTaksi',
+        'taxi-desc': 'Co-founded and developed KjeSiTaksi from September 2011 to June 2012. Planned and built iOS and Android ride-hailing apps, improving urban mobility and transportation services in Slovenia.',
         'ios-dev': 'iOS Development',
         'ios-tech': 'Swift, Objective-C, SwiftUI, UIKit, TestFlight, App Store Connect',
         'android-dev': 'Android Development',
         'android-tech': 'Kotlin, Java, Jetpack Compose, Material Design, Play Console',
-        'mobile-arch': 'Mobile Architecture',
-        'mobile-arch-tech': 'System Design, Performance Optimization, Security, CI/CD',
-        'kotlin-multiplatform': 'Kotlin Multiplatform',
-        'kotlin-multiplatform-desc': 'Cross-platform development for iOS, Android, and Web using Kotlin'
+        'dev-tools': 'Development Tools',
+        'dev-tools-tech': 'Git, Bitrise CI, Zeplin',
+        'languages': 'Languages',
+        'languages-desc': 'Slovenian (Native), English, German'
     },
     de: {
         'portfolio': 'Projekte',
         'expertise': 'Fachkenntnisse',
         'contact': 'Kontakt',
-        'description': 'Mit 15 Jahren Erfahrung in der Entwicklung außergewöhnlicher iOS- und Android-Anwendungen bringe ich Ihre mobile Vision mit sauberem Code und ansprechendem Design zum Leben.',
+        'description': 'Ein neugieriges Wesen, das darauf abzielt, Systeme zu entwickeln, die unser tägliches Leben erleichtern. Mit umfangreicher Erfahrung in der mobilen Entwicklung bringe ich Ihre mobile Vision mit sauberem Code und ansprechendem Design zum Leben.',
         'view-projects': 'Projekte ansehen',
         'get-in-touch': 'Kontakt aufnehmen',
-        'health-app-title': 'Gesundheits- & Fitness-App',
-        'health-app-desc': 'Eine umfassende Fitness-Tracking-Anwendung, entwickelt mit Swift für iOS, mit Echtzeit-Workout-Tracking, Ernährungsplanung und sozialen Funktionen.',
-        'ecommerce-title': 'E-Commerce-Plattform',
-        'ecommerce-desc': 'Eine leistungsstarke Android-Shopping-App, die Millionen von täglichen Transaktionen verarbeitet und sich auf Benutzererfahrung und Sicherheit konzentriert.',
-        'social-title': 'Social Media App',
-        'social-desc': 'Native mobile Anwendung mit Echtzeit-Messaging und Medienaustausch, optimiert für iOS- und Android-Plattformen.',
+        'toshl-title': 'Toshl Finance',
+        'toshl-desc': 'Entwicklung der persönlichen Finanzverwaltungs-App Toshl für iOS und Android seit Dezember 2018. Hilft Benutzern, ihre Finanzen durch intuitive mobile Schnittstellen effektiv zu verwalten.',
+        'carlock-title': 'CarLock',
+        'carlock-desc': 'Mitbegründer und Entwickler von CarLock von Januar 2013 bis November 2015. Entwickelte Android- und iOS-Apps, die Fahrstil und andere Daten von einem Gerät im Auto anzeigen, zur Verbesserung der Fahrzeugsicherheit und des Fahrerbewusstseins.',
+        'taxi-title': 'KjeSiTaksi',
+        'taxi-desc': 'Mitbegründer und Entwickler von KjeSiTaksi von September 2011 bis Juni 2012. Plante und entwickelte iOS- und Android-Taxi-Apps zur Verbesserung der urbanen Mobilität und Transportdienste in Slowenien.',
         'ios-dev': 'iOS-Entwicklung',
         'ios-tech': 'Swift, Objective-C, SwiftUI, UIKit, TestFlight, App Store Connect',
         'android-dev': 'Android-Entwicklung',
         'android-tech': 'Kotlin, Java, Jetpack Compose, Material Design, Play Console',
-        'mobile-arch': 'Mobile Architektur',
-        'mobile-arch-tech': 'System Design, Performance-Optimierung, Sicherheit, CI/CD',
-        'kotlin-multiplatform': 'Kotlin Multiplatform',
-        'kotlin-multiplatform-desc': 'Plattformübergreifende Entwicklung für iOS, Android und Web mit Kotlin'
+        'dev-tools': 'Entwicklungswerkzeuge',
+        'dev-tools-tech': 'Git, Bitrise CI, Zeplin',
+        'languages': 'Sprachen',
+        'languages-desc': 'Slowenisch (Muttersprache), Englisch, Deutsch'
     }
 };
 
@@ -107,14 +107,14 @@ function setLanguage(lang) {
     
     // Update portfolio items
     const portfolioItems = document.querySelectorAll('#portfolio .portfolio-item');
-    portfolioItems[0].querySelector('h3').textContent = translations[lang]['health-app-title'];
-    portfolioItems[0].querySelector('p:first-of-type').textContent = translations[lang]['health-app-desc'];
+    portfolioItems[0].querySelector('h3').textContent = translations[lang]['toshl-title'];
+    portfolioItems[0].querySelector('p:first-of-type').textContent = translations[lang]['toshl-desc'];
     
-    portfolioItems[1].querySelector('h3').textContent = translations[lang]['ecommerce-title'];
-    portfolioItems[1].querySelector('p:first-of-type').textContent = translations[lang]['ecommerce-desc'];
+    portfolioItems[1].querySelector('h3').textContent = translations[lang]['carlock-title'];
+    portfolioItems[1].querySelector('p:first-of-type').textContent = translations[lang]['carlock-desc'];
     
-    portfolioItems[2].querySelector('h3').textContent = translations[lang]['social-title'];
-    portfolioItems[2].querySelector('p:first-of-type').textContent = translations[lang]['social-desc'];
+    portfolioItems[2].querySelector('h3').textContent = translations[lang]['taxi-title'];
+    portfolioItems[2].querySelector('p:first-of-type').textContent = translations[lang]['taxi-desc'];
 
     // Update expertise section
     const expertiseItems = document.querySelectorAll('#expertise .portfolio-item');
@@ -124,11 +124,11 @@ function setLanguage(lang) {
     expertiseItems[1].querySelector('h3').textContent = translations[lang]['android-dev'];
     expertiseItems[1].querySelector('p').textContent = translations[lang]['android-tech'];
     
-    expertiseItems[2].querySelector('h3').textContent = translations[lang]['mobile-arch'];
-    expertiseItems[2].querySelector('p').textContent = translations[lang]['mobile-arch-tech'];
+    expertiseItems[2].querySelector('h3').textContent = translations[lang]['dev-tools'];
+    expertiseItems[2].querySelector('p').textContent = translations[lang]['dev-tools-tech'];
     
-    expertiseItems[3].querySelector('h3').textContent = translations[lang]['kotlin-multiplatform'];
-    expertiseItems[3].querySelector('p').textContent = translations[lang]['kotlin-multiplatform-desc'];
+    expertiseItems[3].querySelector('h3').textContent = translations[lang]['languages'];
+    expertiseItems[3].querySelector('p').textContent = translations[lang]['languages-desc'];
 
     // Update section headings
     document.querySelector('#portfolio h2').textContent = translations[lang]['portfolio'];
