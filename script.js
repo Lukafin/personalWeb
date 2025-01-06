@@ -161,4 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add theme toggle event listener
     const themeToggle = document.getElementById('theme-toggle');
     themeToggle.addEventListener('click', toggleTheme);
+
+    const blogLink = document.querySelector('a[href="/blog"]');
+    if (blogLink) {
+        blogLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.location.href = '/blog';
+        });
+    }
 });

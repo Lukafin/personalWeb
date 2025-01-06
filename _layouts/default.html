@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+    <meta name="theme-color" content="#6366f1">
+    <title>{% if page.title %}{{ page.title }} - {% endif %}Luka Finžgar</title>
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <link rel="stylesheet" href="https://use.typekit.net/rnz2bms.css">
+    <script src="{{ '/script.js' | relative_url }}" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/#portfolio">Featured Projects</a>
+                <a href="/#expertise">Technical Expertise</a>
+                <a href="/blog">Blog</a>
+            </div>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                    <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.65 0-3 1.35-3 3s1.35 3 3 3 3-1.35 3-3-1.35-3-3-3zm0-2c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1s-1 .45-1 1v2c0 .55.45 1 1 1zm0 12c-.55 0-1 .45-1 1v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1z"/>
+                    </svg>
+                    <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12.1 22c-0.3 0-0.6 0-0.9 0-5.5-0.5-9.5-5.4-9-10.9 0.4-4.8 4.2-8.6 9-9 0.4 0 0.8 0.2 1 0.5 0.2 0.3 0.2 0.8-0.1 1.1-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 0.3-0.2 0.7-0.3 1.1-0.1 0.3 0.2 0.5 0.6 0.5 1 -0.2 2.7-1.5 5.1-3.6 6.8C16.6 21.2 14.4 22 12.1 22z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    {{ content }}
+
+    <script src="{{ '/script.js' | relative_url }}"></script>
+</body>
+</html> 
