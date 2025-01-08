@@ -494,8 +494,13 @@ h3 {
 }
 
 .blog-post h2 {
-    color: var(--primary-color);
+    font-size: 2rem;
     margin-bottom: 1rem;
+}
+
+[data-theme="dark"] .blog-post h2,
+[data-theme="dark"] .blog-list h2 a {
+    color: var(--accent-color);
 }
 
 .blog-post-meta {
