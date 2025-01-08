@@ -84,7 +84,26 @@ function initializeHomepage() {
             'languages-desc': 'Slovenian (Native), English, German'
         },
         de: {
-            // ... German translations ...
+            'portfolio': 'Ausgewählte Projekte',
+            'expertise': 'Technische Expertise',
+            'contact': 'Kontakt aufnehmen',
+            'description': 'Ein neugieriger Geist, der darauf abzielt, Systeme zu entwickeln, die unser tägliches Leben erleichtern. Mit umfangreicher Erfahrung in der mobilen Entwicklung bringe ich Ihre mobile Vision mit sauberem Code und beeindruckendem Design zum Leben.',
+            'view-projects': 'Projekte ansehen',
+            'get-in-touch': 'Kontakt aufnehmen',
+            'toshl-title': 'Toshl Finance',
+            'toshl-desc': 'Arbeite seit Dezember 2018 an der Personal Finance Management App Toshl für iOS und Android. Helfe Nutzern, ihre Finanzen durch intuitive mobile Schnittstellen effektiv zu verwalten.',
+            'carlock-title': 'CarLock',
+            'carlock-desc': 'Von Januar 2013 bis November 2015 CarLock mitbegründet und entwickelt. Entwickelte Android- und iOS-Apps, die Fahrstil und andere Daten von einem Gerät im Auto anzeigen, um die Fahrzeugsicherheit und das Fahrerbewusstsein zu verbessern.',
+            'taxi-title': 'KjeSiTaksi',
+            'taxi-desc': 'Von September 2011 bis Juni 2012 KjeSiTaksi mitbegründet und entwickelt. Planung und Entwicklung von iOS- und Android-Taxi-Apps zur Verbesserung der urbanen Mobilität und Transportdienste in Slowenien.',
+            'ios-dev': 'iOS-Entwicklung',
+            'ios-tech': 'Swift, Objective-C, SwiftUI, UIKit, TestFlight, App Store Connect',
+            'android-dev': 'Android-Entwicklung',
+            'android-tech': 'Kotlin, Java, Jetpack Compose, Material Design, Play Console',
+            'dev-tools': 'Entwicklungswerkzeuge',
+            'dev-tools-tech': 'Git, Bitrise CI, Zeplin',
+            'languages': 'Sprachen',
+            'languages-desc': 'Slowenisch (Muttersprache), Englisch, Deutsch'
         }
     };
 
