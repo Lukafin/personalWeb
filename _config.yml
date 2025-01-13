@@ -1,7 +1,7 @@
 title: Luka Finžgar's Blog
 description: Mobile Development Expert with 15 years of experience in iOS and Android development
-baseurl: ""
-url: "https://lukafinzgar.github.io"
+baseurl: "/personalWeb"
+url: "https://lukafin.github.io"
 
 # Build settings
 markdown: kramdown
