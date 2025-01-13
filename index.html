@@ -1,3 +1,6 @@
+---
+layout: none
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Luka Finžgar - Experienced Mobile Developer specializing in iOS and Android applications, aiming to build systems that make everyday lives easier.">
     <meta name="theme-color" content="#6366f1">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
     <link rel="stylesheet" href="https://use.typekit.net/rnz2bms.css">
-    <script src="script.js" defer></script>
+    <script src="{{ '/script.js' | relative_url }}" defer></script>
     <title>Luka Finžgar | Mobile Developer & Tech Enthusiast</title>
 </head>
 <body>
@@ -17,7 +20,7 @@
                 <a href="#portfolio" data-en="Featured Projects" data-de="Projekte">Featured Projects</a>
                 <a href="#expertise" data-en="Technical Expertise" data-de="Fachkenntnisse">Technical Expertise</a>
                 <a href="#contact" data-en="Let's Connect" data-de="Kontakt">Let's Connect</a>
-                <a href="{{ '/blog' | relative_url }}" data-en="Blog" data-de="Blog">Blog</a>
+                <a href="/personalWeb/blog" data-en="Blog" data-de="Blog">Blog</a>
             </div>
             <div class="nav-controls">
                 <div class="language-switcher">
