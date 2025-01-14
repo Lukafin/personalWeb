@@ -36,6 +36,7 @@ body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
     padding: 0;
+    padding-top: 60px;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -176,10 +177,11 @@ section {
     left: 0;
     right: 0;
     z-index: 1000;
-    background: rgba(245, 235, 224, 0.9);
+    background: var(--nav-bg);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    border-bottom: 1px solid rgba(169, 132, 103, 0.1);
+    border-bottom: 1px solid var(--glass-border);
+    height: 60px;
 }
 
 [data-theme="dark"] .navbar {
@@ -190,16 +192,17 @@ section {
 .nav-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 1rem 2rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: 100%;
 }
 
 .nav-controls {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 .language-switcher {
@@ -237,14 +240,18 @@ section {
 
 .nav-links {
     display: flex;
-    gap: 2rem;
+    gap: 1rem;
+}
+
+.nav-links .mobile-only {
+    display: none;
 }
 
 .nav-links a {
     font-weight: 500;
     color: var(--text-color);
     text-decoration: none;
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 0.5rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease;
     white-space: nowrap;
@@ -308,21 +315,70 @@ h3 {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding-top: 60px;
+    }
+    
     .nav-content {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 1rem;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0.5rem 1rem;
+        gap: 0.5rem;
     }
     
     .nav-links {
-        gap: 0.5rem;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        flex: 1;
+        font-size: 0.9rem;
     }
     
     .nav-links a {
+        padding: 0.25rem 0.5rem;
         font-size: 0.9rem;
-        padding: 0.4rem 0.8rem;
+    }
+    
+    .nav-controls {
+        justify-content: flex-end;
+        flex: 0 0 auto;
+    }
+    
+    header {
+        padding-top: 2rem;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding-top: 60px;
+    }
+    
+    .nav-content {
+        padding: 0.5rem;
+    }
+    
+    .nav-links {
+        gap: 0.25rem;
+        font-size: 0.85rem;
+    }
+    
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.2rem 0.4rem;
+    }
+    
+    .nav-controls {
+        gap: 0.25rem;
+    }
+    
+    .lang-btn {
+        width: 28px;
+        height: 21px;
     }
 }
 
@@ -551,4 +607,79 @@ h3 {
 
 main {
     margin-top: 60px;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 2rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 10;
+}
+
+.hamburger-menu span {
+    width: 2rem;
+    height: 0.25rem;
+    background: var(--text-color);
+    border-radius: 10px;
+    transition: all 0.3s linear;
+    position: relative;
+    transform-origin: 1px;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        font-size: 0.9rem;
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .hamburger-menu {
+        display: flex;
+        margin-right: auto;
+    }
+
+    .nav-content {
+        justify-content: space-between;
+        padding: 0 1rem;
+    }
+
+    .nav-controls {
+        margin-right: 0;
+        gap: 0.5rem;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        flex-direction: column;
+        width: 100%;
+        background: var(--nav-bg);
+        align-items: center;
+        padding: 1rem 0;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-in-out;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--glass-border);
+    }
+
+    .nav-links.open {
+        transform: translateY(0);
+    }
+
+    .nav-links .mobile-only {
+        display: block;
+    }
 }

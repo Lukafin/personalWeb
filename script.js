@@ -52,171 +52,62 @@ document.addEventListener('DOMContentLoaded', () => {
         themeToggle.addEventListener('click', toggleTheme);
     }
 
-    // Only initialize language switching if we're on the homepage
-    if (window.location.pathname === '/' || 
-        window.location.pathname === '/index.html' || 
-        window.location.pathname === '/personalWeb/' || 
-        window.location.pathname === '/personalWeb/index.html') {
-        initializeHomepage();
+    // Initialize hamburger menu
+    const hamburger = document.querySelector('.hamburger-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+        
+        // Close menu when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
     }
-});
 
-// Homepage-specific functionality
-function initializeHomepage() {
-    const translations = {
-        en: {
-            'portfolio': 'Featured Projects',
-            'expertise': 'Technical Expertise',
-            'contact': "Let's Connect",
-            'description': 'Curious creature aiming to build systems that would make our everyday lives easier. With extensive experience in mobile development, I bring your mobile vision to life with clean code and stunning design.',
-            'view-projects': 'View Projects',
-            'get-in-touch': 'Get in Touch',
-            'toshl-title': 'Toshl Finance',
-            'toshl-desc': 'Working on personal finance management app Toshl for iOS and Android since December 2018. Helping users manage their finances effectively through intuitive mobile interfaces.',
-            'carlock-title': 'CarLock',
-            'carlock-desc': 'Co-founded and developed CarLock from January 2013 to November 2015. Created Android and iOS apps that displayed driving style and other data from a device in the car, enhancing vehicle security and driver awareness.',
-            'taxi-title': 'KjeSiTaksi',
-            'taxi-desc': 'Co-founded and developed KjeSiTaksi from September 2011 to June 2012. Planned and built iOS and Android ride-hailing apps, improving urban mobility and transportation services in Slovenia.',
-            'ios-dev': 'iOS Development',
-            'ios-tech': 'Swift, Objective-C, SwiftUI, UIKit, TestFlight, App Store Connect',
-            'android-dev': 'Android Development',
-            'android-tech': 'Kotlin, Java, Jetpack Compose, Material Design, Play Console',
-            'dev-tools': 'Development Tools',
-            'dev-tools-tech': 'Git, Bitrise CI, Zeplin',
-            'languages': 'Languages',
-            'languages-desc': 'Slovenian (Native), English, German'
-        },
-        de: {
-            'portfolio': 'Ausgewählte Projekte',
-            'expertise': 'Technische Expertise',
-            'contact': 'Kontakt aufnehmen',
-            'description': 'Ein neugieriger Geist, der darauf abzielt, Systeme zu entwickeln, die unser tägliches Leben erleichtern. Mit umfangreicher Erfahrung in der mobilen Entwicklung bringe ich Ihre mobile Vision mit sauberem Code und beeindruckendem Design zum Leben.',
-            'view-projects': 'Projekte ansehen',
-            'get-in-touch': 'Kontakt aufnehmen',
-            'toshl-title': 'Toshl Finance',
-            'toshl-desc': 'Arbeite seit Dezember 2018 an der Personal Finance Management App Toshl für iOS und Android. Helfe Nutzern, ihre Finanzen durch intuitive mobile Schnittstellen effektiv zu verwalten.',
-            'carlock-title': 'CarLock',
-            'carlock-desc': 'Von Januar 2013 bis November 2015 CarLock mitbegründet und entwickelt. Entwickelte Android- und iOS-Apps, die Fahrstil und andere Daten von einem Gerät im Auto anzeigen, um die Fahrzeugsicherheit und das Fahrerbewusstsein zu verbessern.',
-            'taxi-title': 'KjeSiTaksi',
-            'taxi-desc': 'Von September 2011 bis Juni 2012 KjeSiTaksi mitbegründet und entwickelt. Planung und Entwicklung von iOS- und Android-Taxi-Apps zur Verbesserung der urbanen Mobilität und Transportdienste in Slowenien.',
-            'ios-dev': 'iOS-Entwicklung',
-            'ios-tech': 'Swift, Objective-C, SwiftUI, UIKit, TestFlight, App Store Connect',
-            'android-dev': 'Android-Entwicklung',
-            'android-tech': 'Kotlin, Java, Jetpack Compose, Material Design, Play Console',
-            'dev-tools': 'Entwicklungswerkzeuge',
-            'dev-tools-tech': 'Git, Bitrise CI, Zeplin',
-            'languages': 'Sprachen',
-            'languages-desc': 'Slowenisch (Muttersprache), Englisch, Deutsch'
-        }
-    };
-
+    // Initialize language switching
     const langButtons = {
         en: document.getElementById('en-lang'),
         de: document.getElementById('de-lang')
     };
 
-    function setLanguage(lang) {
-        if (!langButtons.en || !langButtons.de) return;
-
-        // Update active button state
-        Object.keys(langButtons).forEach(key => {
-            langButtons[key].classList.toggle('active', key === lang);
-        });
-
-        // Store selected language
-        localStorage.setItem('language', lang);
-
-        // Update content only if elements exist
-        const elements = {
-            navLinks: document.querySelectorAll('.nav-links a'),
-            headerDesc: document.querySelector('header p'),
-            ctaPrimary: document.querySelector('.cta-primary'),
-            ctaSecondary: document.querySelector('.cta-secondary'),
-            portfolioItems: document.querySelectorAll('#portfolio .portfolio-item'),
-            expertiseItems: document.querySelectorAll('#expertise .portfolio-item'),
-            sectionHeadings: {
-                portfolio: document.querySelector('#portfolio h2'),
-                expertise: document.querySelector('#expertise h2'),
-                contact: document.querySelector('#contact h2')
-            }
-        };
-
-        // Update navigation links
-        if (elements.navLinks.length >= 3) {
-            elements.navLinks[0].textContent = translations[lang]['portfolio'];
-            elements.navLinks[1].textContent = translations[lang]['expertise'];
-            elements.navLinks[2].textContent = translations[lang]['contact'];
-        }
-
-        // Update other elements if they exist
-        if (elements.headerDesc) elements.headerDesc.textContent = translations[lang]['description'];
-        if (elements.ctaPrimary) elements.ctaPrimary.textContent = translations[lang]['view-projects'];
-        if (elements.ctaSecondary) elements.ctaSecondary.textContent = translations[lang]['get-in-touch'];
-
-        // Update portfolio items
-        if (elements.portfolioItems.length >= 3) {
-            updatePortfolioItems(elements.portfolioItems, lang, translations);
-        }
-
-        // Update expertise items
-        if (elements.expertiseItems.length >= 4) {
-            updateExpertiseItems(elements.expertiseItems, lang, translations);
-        }
-
-        // Update section headings
-        if (elements.sectionHeadings.portfolio) elements.sectionHeadings.portfolio.textContent = translations[lang]['portfolio'];
-        if (elements.sectionHeadings.expertise) elements.sectionHeadings.expertise.textContent = translations[lang]['expertise'];
-        if (elements.sectionHeadings.contact) elements.sectionHeadings.contact.textContent = translations[lang]['contact'];
-    }
-
-    // Helper functions for updating content
-    function updatePortfolioItems(items, lang, translations) {
-        const portfolioContent = [
-            ['toshl-title', 'toshl-desc'],
-            ['carlock-title', 'carlock-desc'],
-            ['taxi-title', 'taxi-desc']
-        ];
-
-        items.forEach((item, index) => {
-            if (index < portfolioContent.length) {
-                const [titleKey, descKey] = portfolioContent[index];
-                const titleEl = item.querySelector('h3');
-                const descEl = item.querySelector('p:first-of-type');
-
-                if (titleEl) titleEl.textContent = translations[lang][titleKey];
-                if (descEl) descEl.textContent = translations[lang][descKey];
-            }
-        });
-    }
-
-    function updateExpertiseItems(items, lang, translations) {
-        const expertiseContent = [
-            ['ios-dev', 'ios-tech'],
-            ['android-dev', 'android-tech'],
-            ['dev-tools', 'dev-tools-tech'],
-            ['languages', 'languages-desc']
-        ];
-
-        items.forEach((item, index) => {
-            if (index < expertiseContent.length) {
-                const [titleKey, descKey] = expertiseContent[index];
-                const titleEl = item.querySelector('h3');
-                const descEl = item.querySelector('p');
-
-                if (titleEl) titleEl.textContent = translations[lang][titleKey];
-                if (descEl) descEl.textContent = translations[lang][descKey];
-            }
-        });
-    }
-
-    // Add click event listeners to language buttons if they exist
-    Object.keys(langButtons).forEach(lang => {
-        if (langButtons[lang]) {
+    if (langButtons.en && langButtons.de) {
+        Object.keys(langButtons).forEach(lang => {
             langButtons[lang].addEventListener('click', () => setLanguage(lang));
-        }
+        });
+
+        // Set initial language
+        const savedLanguage = localStorage.getItem('language') || 'en';
+        setLanguage(savedLanguage);
+    }
+});
+
+// Language switching functionality
+function setLanguage(lang) {
+    const langButtons = {
+        en: document.getElementById('en-lang'),
+        de: document.getElementById('de-lang')
+    };
+
+    if (!langButtons.en || !langButtons.de) return;
+
+    // Update active button state
+    Object.keys(langButtons).forEach(key => {
+        langButtons[key].classList.toggle('active', key === lang);
     });
 
-    // Set initial language
-    const savedLanguage = localStorage.getItem('language') || 'en';
-    setLanguage(savedLanguage);
+    // Store selected language
+    localStorage.setItem('language', lang);
+
+    // Update text for all elements with a data-en or data-de attribute
+    document.querySelectorAll('[data-en], [data-de]').forEach(el => {
+        const translation = el.getAttribute(`data-${lang}`);
+        if (translation) {
+            el.textContent = translation;
+        }
+    });
 }
