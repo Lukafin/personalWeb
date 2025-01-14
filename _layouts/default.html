@@ -6,8 +6,11 @@
     <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
     <meta name="theme-color" content="#6366f1">
     <title>{% if page.title %}{{ page.title }} - {% endif %}Luka Finžgar</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
+    <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
-    <link rel="stylesheet" href="https://use.typekit.net/rnz2bms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="{{ '/script.js' | relative_url }}" defer></script>
 </head>
 <body>

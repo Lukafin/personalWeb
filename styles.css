@@ -33,7 +33,7 @@
 }
 
 body {
-    font-family: soleil, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-color);
@@ -63,7 +63,7 @@ header {
 }
 
 header h1, h2, h3, .nav-links a {
-    font-family: soleil, sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 header h1 {
