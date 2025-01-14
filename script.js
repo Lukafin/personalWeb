@@ -53,7 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Only initialize language switching if we're on the homepage
-    if (window.location.pathname === '/' || window.location.pathname === '/index.html') {
+    if (window.location.pathname === '/' || 
+        window.location.pathname === '/index.html' || 
+        window.location.pathname === '/personalWeb/' || 
+        window.location.pathname === '/personalWeb/index.html') {
         initializeHomepage();
     }
 });
