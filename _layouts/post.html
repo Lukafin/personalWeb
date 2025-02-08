@@ -1,21 +1,25 @@
 ---
 layout: default
 ---
-<main class="blog-list">
-    <article class="blog-post">
-        <h1>{{ page.title }}</h1>
-        <div class="blog-post-meta">
-            <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
-            {% if page.categories %}
-                <span> | Categories: {{ page.categories | join: ", " }}</span>
-            {% endif %}
-        </div>
-        <div class="blog-post-content">
-            {{ content }}
-        </div>
-    </article>
-    
-    <div class="cta-buttons">
-        <a href="{{ site.baseurl }}/blog" class="cta-secondary">← Back to Blog posts</a>
-    </div>
-</main> 
+<article class="post">
+  <header class="post-header">
+    <a href="{{ '/blog' | relative_url }}" class="back-to-posts">← Back to Posts</a>
+    <h1>{{ page.title }}</h1>
+    <p class="meta">{{ page.date | date_to_string }}</p>
+  </header>
+
+  {% if page.podcast_link %}
+  <div class="podcast-player">
+    <h3>Listen to this post:</h3>
+    <audio controls>
+      <source src="{{ site.baseurl }}/{{ page.podcast_link }}" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+    <a href="{{ site.baseurl }}/{{ page.podcast_link }}" download>Download podcast</a>
+  </div>
+  {% endif %}
+
+  <div class="entry">
+    {{ content }}
+  </div>
+</article> 

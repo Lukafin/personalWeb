@@ -1,0 +1,3 @@
+podcastfy
+python-dotenv
+pyyaml 
