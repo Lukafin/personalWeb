@@ -8,7 +8,17 @@ layout: default
     <p class="meta">{{ page.date | date_to_string }}</p>
   </header>
 
-  {% if page.podcast_link %}
+  <div class="post-content-wrapper">
+  {% if page.podcast_link and page.podcast_link != "" and page.podcast_link != nil %}
+  {% assign podcast_path = site.baseurl | append: '/' | append: page.podcast_link %}
+  {% assign podcast_file_exists = false %}
+  {% for static_file in site.static_files %}
+    {% if static_file.path == podcast_path %}
+      {% assign podcast_file_exists = true %}
+      {% break %}
+    {% endif %}
+  {% endfor %}
+  {% if podcast_file_exists %}
   <div class="podcast-player">
     <h3>Listen to this post:</h3>
     <audio controls>
@@ -18,8 +28,10 @@ layout: default
     <a href="{{ site.baseurl }}/{{ page.podcast_link }}" download>Download podcast</a>
   </div>
   {% endif %}
+  {% endif %}
 
   <div class="entry">
     {{ content }}
+  </div>
   </div>
 </article> 
