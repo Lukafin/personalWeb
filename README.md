@@ -22,7 +22,6 @@ A Jekyll-based personal blog website with an automated podcast generation featur
 1. Clone the repository:
    ```bash
    git clone [repository-url]
-   cd windsurf-project
    ```
 
 2. Install Ruby dependencies:
@@ -87,7 +86,6 @@ python generate_podcast.py
 
 The site is automatically deployed through GitHub Pages when changes are pushed to the main branch. The GitHub Actions workflow handles:
 - Building the Jekyll site
-- Generating podcasts for new posts
 - Deploying to GitHub Pages
 
 
