@@ -15,6 +15,8 @@ On top of that, inspired by how much I enjoy NotebookLM, I added podcasts: hosts
 
 The app is available on Android via Firebase App Testing (not yet in the Play Store), with iOS coming soon. Friends who are testing it already find it useful, and I'd love to get more feedback—so if you'd like to try it, feel free to reach out!
 
+Before making the app widely available, I also need to figure out what health-related apps must adhere to regarding Play Store / App Store rules and national regulations.
+
 ## App Screenshots
 
 Here are some screenshots so you can get a better idea of how the AI Health Research Companion works:
@@ -29,4 +31,3 @@ Here are some screenshots so you can get a better idea of how the AI Health Rese
 
 ![AI Health Research Companion Podcast Dialog](/assets/podcastDialog.jpeg)
 
-Before making the app widely available, I also need to figure out what health-related apps must adhere to regarding Play Store / App Store rules and national regulations.
