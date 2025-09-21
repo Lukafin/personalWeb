@@ -749,6 +749,29 @@ main {
   line-height: 1.8;  /* Adjust this to change line spacing in paragraphs */
 }
 
+/* Blog Post Images - ensure screenshots scale gracefully on all screen sizes */
+.entry img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1.75rem auto;
+  border-radius: 1rem;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+  border: 1px solid var(--glass-border);
+}
+
+[data-theme="dark"] .entry img {
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.45);
+  border-color: rgba(169, 132, 103, 0.35);
+}
+
+@media (max-width: 600px) {
+  .entry img {
+    margin: 1.25rem auto;
+    border-radius: 0.75rem;
+  }
+}
+
 /* Paragraph Styling - Controls how paragraphs and line breaks appear */
 .entry p {
   margin-bottom: 1.5em;  /* Space between paragraphs */
