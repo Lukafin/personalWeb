@@ -3,9 +3,12 @@ layout: default
 ---
 <article class="post">
   <header class="post-header">
-    <a href="{{ '/blog' | relative_url }}" class="back-to-posts">← Back to Posts</a>
-    <h1>{{ page.title }}</h1>
-    <p class="meta">{{ page.date | date_to_string }}</p>
+    <a href="{{ '/blog' | relative_url }}" class="back-to-posts" data-en="← Back to Posts" data-de="← Zurück zu den Beiträgen">← Back to Posts</a>
+    <h1>
+      <span data-lang="en">{{ page.title_en | default: page.title }}</span>
+      {% if page.title_de %}<span data-lang="de" hidden>{{ page.title_de }}</span>{% endif %}
+    </h1>
+    <p class="meta">{{ page.date | date: "%d.%m.%Y" }}</p>
   </header>
 
   <div class="post-content-wrapper">
@@ -20,12 +23,13 @@ layout: default
   {% endfor %}
   {% if podcast_file_exists %}
   <div class="podcast-player">
-    <h3>Listen to this post:</h3>
+    <h3 data-en="Listen to this post:" data-de="Diesen Beitrag anhören:">Listen to this post:</h3>
     <audio controls>
       <source src="{{ site.baseurl }}/{{ page.podcast_link }}" type="audio/mpeg">
-      Your browser does not support the audio element.
+      <p data-lang="en">Your browser does not support the audio element.</p>
+      <p data-lang="de" hidden>Ihr Browser unterstützt das Audioelement nicht.</p>
     </audio>
-    <a href="{{ site.baseurl }}/{{ page.podcast_link }}" download>Download podcast</a>
+    <a href="{{ site.baseurl }}/{{ page.podcast_link }}" download data-en="Download podcast" data-de="Podcast herunterladen">Download podcast</a>
   </div>
   {% endif %}
   {% endif %}

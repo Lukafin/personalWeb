@@ -103,11 +103,21 @@ function setLanguage(lang) {
     // Store selected language
     localStorage.setItem('language', lang);
 
+    // Update document language attributes
+    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('data-language', lang);
+
     // Update text for all elements with a data-en or data-de attribute
     document.querySelectorAll('[data-en], [data-de]').forEach(el => {
         const translation = el.getAttribute(`data-${lang}`);
         if (translation) {
             el.textContent = translation;
         }
+    });
+
+    // Toggle visibility for language-specific elements
+    document.querySelectorAll('[data-lang]').forEach(el => {
+        const shouldShow = el.getAttribute('data-lang') === lang;
+        el.hidden = !shouldShow;
     });
 }
