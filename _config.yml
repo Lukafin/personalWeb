@@ -2,7 +2,6 @@ title: Luka Finžgar's Blog
 description: Mobile Development Expert with 15 years of experience in iOS and Android development
 baseurl: ""
 url: "https://lukafinzgar.com"
-
 # Build settings
 markdown: kramdown
 theme: minima

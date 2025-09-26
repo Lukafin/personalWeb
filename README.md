@@ -91,4 +91,11 @@ The site is automatically deployed through GitHub Pages when changes are pushed 
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Google Analytics setup
+
+Google Analytics 4 tracking is now enabled on every page with Measurement ID `G-D9BY20S9MQ`. If you want to use a different
+property, replace that ID in `_layouts/default.html` with the Measurement ID from your GA4 data stream. You can create or find
+your Measurement ID at [analytics.google.com](https://analytics.google.com) without creating a Firebase project unless you need
+Firebase-specific integrations.
