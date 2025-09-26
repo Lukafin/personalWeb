@@ -91,4 +91,17 @@ The site is automatically deployed through GitHub Pages when changes are pushed 
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Google Analytics setup
+
+The site now includes an optional Google Analytics 4 snippet. To enable it you only need a GA4 Measurement ID; creating a new
+Firebase project is **not** required unless you want to use Firebase-specific integrations.
+
+1. Visit [analytics.google.com](https://analytics.google.com) and sign in with your Google account.
+2. If you do not already have one, create a Google Analytics account (this is separate from Firebase).
+3. Create a new GA4 property (or reuse an existing one) and follow the setup wizard until you reach the *Data Streams* step.
+4. Add a **Web** data stream for your site. The setup assistant will display a Measurement ID that looks like `G-XXXXXXXXXX`.
+5. Copy that Measurement ID and paste it into the `google_analytics` field in `_config.yml`.
+
+Once the site is rebuilt and deployed with the configured ID, all pages will report traffic to your GA4 property.
