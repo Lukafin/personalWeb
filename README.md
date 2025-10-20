@@ -1,19 +1,17 @@
-Personal Site with Blog and with Podcast Generation
+Personal Site with Blog
 
-A Jekyll-based personal blog website with an automated podcast generation feature. The site includes a blog section and automatically generates audio versions of blog posts using AI text-to-speech technology.
+A Jekyll-based personal blog website focused on sharing written updates and articles.
 
 ## Features
 
 - 🎨 Modern, responsive design
 - 📝 Blog post support with Markdown
-- 🎙️ Automated podcast generation from blog posts
 - 🔄 GitHub Actions workflow for continuous deployment
 - 🎯 SEO optimized
 
 ## Prerequisites
 
 - Ruby (2.7.0 or higher)
-- Python (3.8 or higher)
 - Node.js (for some JavaScript features)
 - Bundler gem
 
@@ -29,19 +27,7 @@ A Jekyll-based personal blog website with an automated podcast generation featur
    bundle install
    ```
 
-3. Install Python dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. Set up environment variables:
-   Create a `.env` file in the root directory with the following:
-   ```
-   # Add your environment variables here
-   # Required for podcast generation
-   ```
-
-5. Run the Jekyll site locally:
+3. Run the Jekyll site locally:
    ```bash
    bundle exec jekyll serve
    ```
@@ -52,9 +38,8 @@ A Jekyll-based personal blog website with an automated podcast generation featur
 - `_posts/` - Blog post markdown files
 - `_layouts/` - Jekyll layout templates
 - `assets/` - Static assets (images, CSS, JS)
-- `data/` - Generated podcast audio files and transcripts
 - `.github/workflows/` - GitHub Actions workflow configurations
-- `generate_podcast.py` - Python script for podcast generation
+- `index.html` - Landing page for the site
 
 ## Writing Blog Posts
 
@@ -73,29 +58,12 @@ A Jekyll-based personal blog website with an automated podcast generation featur
    ---
    ```
 
-## Podcast Generation
-
-The site automatically generates audio versions of blog posts using AI text-to-speech. This process is handled by GitHub Actions when new posts are pushed to the repository.
-
-To generate podcasts locally:
-```bash
-python generate_podcast.py
-```
-
 ## Deployment
 
 The site is automatically deployed through GitHub Pages when changes are pushed to the main branch. The GitHub Actions workflow handles:
 - Building the Jekyll site
 - Deploying to GitHub Pages
 
-
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Google Analytics setup
-
-Google Analytics 4 tracking is now enabled on every page with Measurement ID `G-D9BY20S9MQ`. If you want to use a different
-property, replace that ID in `_layouts/default.html` with the Measurement ID from your GA4 data stream. You can create or find
-your Measurement ID at [analytics.google.com](https://analytics.google.com) without creating a Firebase project unless you need
-Firebase-specific integrations.
