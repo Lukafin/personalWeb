@@ -4,15 +4,24 @@ title: Blog
 ---
 
 <div class="blog-list">
-    <h1>Latest Blog Posts</h1>
-
-    <ul>
-      {% for post in site.posts %}
-        <li>
-          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p>{{ post.date | date_to_string }}</p>
-          <p>{{ post.excerpt }}</p>
-        </li>
-      {% endfor %}
-    </ul> 
+    <h1 data-en="All Blog Posts" data-de="Alle Blogbeiträge">All Blog Posts</h1>
+    {% for post in site.posts %}
+    <article class="blog-post">
+        <h2>
+            <a href="{{ post.url | relative_url }}" data-en="{{ post.title | escape }}" data-de="{{ post.title_de | default: post.title | escape }}">{{ post.title }}</a>
+        </h2>
+        <div class="blog-post-meta">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%d.%m.%Y" }}</time>
+            {% if post.categories %}
+                <span data-lang="en"> | Categories: {{ post.categories | join: ", " }}</span>
+                <span data-lang="de" hidden> | Kategorien: {{ post.categories | join: ", " }}</span>
+            {% endif %}
+        </div>
+        <p data-lang="en">{{ post.excerpt_en | default: post.excerpt | strip_html | truncatewords: 50 }}</p>
+        {% if post.excerpt_de %}
+        <p data-lang="de" hidden>{{ post.excerpt_de }}</p>
+        {% endif %}
+        <a href="{{ post.url | relative_url }}" class="read-more" data-en="Read more" data-de="Weiterlesen">Read more</a>
+    </article>
+    {% endfor %}
 </div>
