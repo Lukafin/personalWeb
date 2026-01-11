@@ -34,4 +34,4 @@ I’m exploring this stack to get a better feel for **agent orchestration** and 
 
 ---
 
-I’ll keep building this even after discovering a much more capable project with similar ideas: ClawDBot (https://github.com/clawdbot/clawdbot)
+I’ll keep building this even after discovering a much more capable project with great Discord community: Clawdbot (https://github.com/clawdbot/clawdbot)
