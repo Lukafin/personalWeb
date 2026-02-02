@@ -60,8 +60,16 @@ layout: none
                     </svg>
                 </button>
                 <button id="ai-toggle" class="ai-toggle" aria-label="Toggle AI mode" aria-pressed="false">
-                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                        <path d="M6 2h8l4 4v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm7 1.5V7h3.5L13 3.5zM7.5 10.5h9v-1.5h-9v1.5zm0 3h9v-1.5h-9v1.5zm0 3h6v-1.5h-6v1.5z"/>
+                    <svg class="icon icon-robot icon-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3v2"/>
+                        <rect x="5" y="5" width="14" height="12" rx="2"/>
+                        <path d="M8 10h2M14 10h2M9 14h6"/>
+                        <path d="M7 19h10"/>
+                        <path d="M9 17v2M15 17v2"/>
+                    </svg>
+                    <svg class="icon icon-human icon-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z"/>
+                        <path d="M4 21v-1c0-3.31 3.58-6 8-6s8 2.69 8 6v1"/>
                     </svg>
                 </button>
             </div>
@@ -70,8 +78,13 @@ layout: none
 
     <section id="ai-mode" class="ai-mode-panel" aria-live="polite">
         <div class="ai-mode-header">
-            <h1 data-en="AI Mode" data-de="KI-Modus">AI Mode</h1>
-            <button id="ai-copy" class="ai-copy" data-en="Copy Markdown" data-de="Markdown kopieren">Copy Markdown</button>
+            <button id="ai-copy" class="ai-copy" data-en="Copy" data-de="Kopieren" data-translate="false" aria-label="Copy">
+                <svg class="icon icon-copy icon-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span class="ai-copy-label" aria-hidden="true">Copied</span>
+            </button>
         </div>
         <pre class="ai-markdown"><code id="ai-markdown"></code></pre>
     </section>
@@ -101,7 +114,6 @@ layout: none
 - LinkedIn: https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831/
 - Twitter: https://twitter.com/lukafinzgar
 - Email: mailto:lukafin@gmail.com
-- Blog: /blog
     </template>
 
     <template id="ai-markdown-de">
@@ -129,7 +141,6 @@ layout: none
 - LinkedIn: https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831/
 - Twitter: https://twitter.com/lukafinzgar
 - E-Mail: mailto:lukafin@gmail.com
-- Blog: /blog
     </template>
 
     <header class="scroll-animation">

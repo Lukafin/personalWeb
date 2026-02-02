@@ -296,11 +296,36 @@ section {
     border-radius: 50%;
     transition: all 0.3s ease;
     color: var(--text-color);
+    margin-left: -0.25rem;
 }
 
 .ai-toggle:hover,
 .ai-toggle[aria-pressed="true"] {
     background-color: rgba(108, 92, 231, 0.1);
+}
+
+.ai-toggle .icon-human {
+    display: none;
+}
+
+body.ai-mode .ai-toggle .icon-robot,
+.ai-toggle[aria-pressed="true"] .icon-robot {
+    display: none;
+}
+
+body.ai-mode .ai-toggle .icon-human,
+.ai-toggle[aria-pressed="true"] .icon-human {
+    display: block;
+}
+
+.theme-toggle .icon,
+.ai-toggle .icon {
+    margin-right: 0;
+}
+
+.ai-toggle .icon {
+    width: 26px;
+    height: 26px;
 }
 
 .icon {
@@ -310,6 +335,14 @@ section {
     transition: transform 0.3s ease;
     margin-right: 0.5rem;
     vertical-align: middle;
+}
+
+.icon.icon-stroke {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .icon-sun {
@@ -416,7 +449,7 @@ h3 {
 .ai-mode-header {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 1rem;
     margin-bottom: 1.5rem;
 }
@@ -425,14 +458,62 @@ h3 {
     border: 1px solid var(--glass-border);
     background: var(--hover-bg);
     color: var(--text-color);
-    padding: 0.5rem 1rem;
-    border-radius: 999px;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
+.ai-copy.copied {
+    width: auto;
+    padding: 0 0.75rem;
+    border-radius: 999px;
+}
+
+.ai-copy-label {
+    display: none;
+    font-size: 0.85rem;
+    margin-left: 0.4rem;
+}
+
+.ai-copy.copied .ai-copy-label {
+    display: inline;
+}
+
 .ai-copy:hover {
     border-color: var(--accent-color);
+}
+
+.ai-copy.copied {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(169, 132, 103, 0.2);
+}
+
+.ai-copy .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 0;
+}
+
+.ai-copy.copied .icon {
+    margin-right: 0.2rem;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
 }
 
 .ai-markdown {
@@ -457,6 +538,10 @@ body.ai-mode .nav-links,
 body.ai-mode .hamburger-menu,
 body.ai-mode .language-switcher {
     display: none;
+}
+
+body.ai-mode .nav-content {
+    justify-content: flex-end;
 }
 
 body.ai-mode .ai-mode-panel {

@@ -113,12 +113,19 @@ document.addEventListener('DOMContentLoaded', () => {
                     textarea.remove();
                 }
                 const savedLanguage = localStorage.getItem('language') || 'en';
-                aiCopy.textContent = savedLanguage === 'de' ? 'Kopiert!' : 'Copied!';
+                const copiedLabel = savedLanguage === 'de' ? 'Kopiert' : 'Copied';
+                const copiedText = aiCopy.querySelector('.ai-copy-label');
+                if (copiedText) {
+                    copiedText.textContent = copiedLabel;
+                }
+                aiCopy.setAttribute('aria-label', copiedLabel);
+                aiCopy.classList.add('copied');
                 setTimeout(() => {
                     const label = aiCopy.getAttribute(`data-${savedLanguage}`);
                     if (label) {
-                        aiCopy.textContent = label;
+                        aiCopy.setAttribute('aria-label', label);
                     }
+                    aiCopy.classList.remove('copied');
                 }, 1500);
             } catch (error) {
                 console.error('Failed to copy AI markdown.', error);
@@ -179,11 +186,20 @@ function setLanguage(lang) {
 
     // Update text for all elements with a data-en or data-de attribute
     document.querySelectorAll('[data-en], [data-de]').forEach(el => {
+        if (el.getAttribute('data-translate') === 'false') return;
         const translation = el.getAttribute(`data-${lang}`);
         if (translation) {
             el.textContent = translation;
         }
     });
+
+    const aiCopy = document.getElementById('ai-copy');
+    if (aiCopy) {
+        const label = aiCopy.getAttribute(`data-${lang}`);
+        if (label) {
+            aiCopy.setAttribute('aria-label', label);
+        }
+    }
 
     updateAiMarkdown(lang);
 }
