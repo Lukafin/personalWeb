@@ -59,9 +59,89 @@ layout: none
                         <path d="M12.1 22c-0.3 0-0.6 0-0.9 0-5.5-0.5-9.5-5.4-9-10.9 0.4-4.8 4.2-8.6 9-9 0.4 0 0.8 0.2 1 0.5 0.2 0.3 0.2 0.8-0.1 1.1-2 2.7-1.4 6.4 1.3 8.4 2.1 1.6 5 1.6 7.1 0 0.3-0.2 0.7-0.3 1.1-0.1 0.3 0.2 0.5 0.6 0.5 1 -0.2 2.7-1.5 5.1-3.6 6.8C16.6 21.2 14.4 22 12.1 22zM9.3 4.4c-2.9 1-5 3.6-5.2 6.8-0.4 4.4 2.8 8.3 7.2 8.7 2.1 0.2 4.2-0.4 5.8-1.8 1.1-0.9 1.9-2.1 2.4-3.4-2.5 0.9-5.3 0.5-7.5-1.1C9.2 11.4 8.1 7.7 9.3 4.4z"/>
                     </svg>
                 </button>
+                <button id="ai-toggle" class="ai-toggle" aria-label="Toggle AI mode" aria-pressed="false">
+                    <svg class="icon icon-robot icon-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 3v2"/>
+                        <rect x="5" y="5" width="14" height="12" rx="2"/>
+                        <path d="M8 10h2M14 10h2M9 14h6"/>
+                        <path d="M7 19h10"/>
+                        <path d="M9 17v2M15 17v2"/>
+                    </svg>
+                    <svg class="icon icon-human icon-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 12c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5z"/>
+                        <path d="M4 21v-1c0-3.31 3.58-6 8-6s8 2.69 8 6v1"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </nav>
+
+    <section id="ai-mode" class="ai-mode-panel" aria-live="polite">
+        <div class="ai-mode-header">
+            <button id="ai-copy" class="ai-copy" data-en="Copy" data-de="Kopieren" data-translate="false" aria-label="Copy">
+                <svg class="icon icon-copy icon-stroke" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="9" y="9" width="13" height="13" rx="2"/>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span class="ai-copy-label" aria-hidden="true">Copied</span>
+            </button>
+        </div>
+        <pre class="ai-markdown"><code id="ai-markdown"></code></pre>
+    </section>
+
+    <template id="ai-markdown-en">
+# Luka Finžgar
+
+## Summary
+- Curious creature aiming to build systems that would make our everyday lives easier. With extensive experience in mobile development, I bring your mobile vision to life with clean code and stunning design.
+- Focus areas: iOS, Android
+
+## Featured Projects
+- **Toshl Finance** — Working on personal finance management app Toshl for iOS and Android since December 2018. Helping users manage their finances effectively through intuitive mobile interfaces.
+  - Technologies: iOS, Android, Mobile Development
+- **CarLock** — Co-founded and developed CarLock from January 2013 to November 2015. Created Android and iOS apps that displayed driving style and other data from a device in the car, enhancing vehicle security and driver awareness.
+  - Technologies: iOS, Android, IoT
+- **KjeSiTaksi** — Co-founded and developed KjeSiTaksi from September 2011 to June 2012. Planned and built iOS and Android ride-hailing apps, improving urban mobility and transportation services in Slovenia.
+  - Technologies: iOS, Android, Location Services
+
+## Technical Expertise
+- iOS Development: Swift, Objective-C, SwiftUI, UIKit, TestFlight, App Store Connect
+- Android Development: Kotlin, Java, Jetpack Compose, Material Design, Play Console
+- Development Tools: Git, Bitrise CI, Zeplin
+- Languages: Slovenian (Native), English (C1-C2), German (A1-B1)
+
+## Contact
+- LinkedIn: https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831/
+- Twitter: https://twitter.com/lukafinzgar
+- Email: mailto:lukafin@gmail.com
+    </template>
+
+    <template id="ai-markdown-de">
+# Luka Finžgar
+
+## Zusammenfassung
+- Neugieriges Wesen, das darauf abzielt, Systeme zu entwickeln, die unser tägliches Leben erleichtern. Mit umfangreicher Erfahrung in der mobilen Entwicklung erwecke ich Ihre mobile Vision mit sauberem Code und beeindruckendem Design zum Leben.
+- Schwerpunkte: iOS, Android
+
+## Ausgewählte Projekte
+- **Toshl Finance** — Arbeite seit Dezember 2018 an der persönlichen Finanzverwaltungs-App Toshl für iOS und Android. Hilft Benutzern, ihre Finanzen durch intuitive mobile Schnittstellen effektiv zu verwalten.
+  - Technologien: iOS, Android, Mobile Entwicklung
+- **CarLock** — Mitbegründer und Entwickler von CarLock von Januar 2013 bis November 2015. Entwickelte Android- und iOS-Apps, die Fahrstil und andere Daten von einem Gerät im Auto anzeigten, um die Fahrzeugsicherheit und das Fahrerbewusstsein zu verbessern.
+  - Technologien: iOS, Android, IoT
+- **KjeSiTaksi** — Mitbegründer und Entwickler von KjeSiTaksi von September 2011 bis Juni 2012. Plante und entwickelte iOS- und Android-Taxi-Apps zur Verbesserung der städtischen Mobilität und Transportdienste in Slowenien.
+  - Technologien: iOS, Android, Standortdienste
+
+## Technische Expertise
+- iOS-Entwicklung: Swift, Objective-C, SwiftUI, UIKit, TestFlight, App Store Connect
+- Android-Entwicklung: Kotlin, Java, Jetpack Compose, Material Design, Play Console
+- Entwicklungswerkzeuge: Git, Bitrise CI, Zeplin
+- Sprachen: Slowenisch (Muttersprache), Englisch (C1-C2), Deutsch (A1-B1)
+
+## Kontakt
+- LinkedIn: https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831/
+- Twitter: https://twitter.com/lukafinzgar
+- E-Mail: mailto:lukafin@gmail.com
+    </template>
 
     <header class="scroll-animation">
         <div class="profile-section">
