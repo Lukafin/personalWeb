@@ -283,6 +283,26 @@ section {
     transform: rotate(15deg);
 }
 
+.ai-toggle {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    color: var(--text-color);
+}
+
+.ai-toggle:hover,
+.ai-toggle[aria-pressed="true"] {
+    background-color: rgba(108, 92, 231, 0.1);
+}
+
 .icon {
     width: 24px;
     height: 24px;
@@ -380,6 +400,67 @@ h3 {
         width: 28px;
         height: 21px;
     }
+}
+
+.ai-mode-panel {
+    display: none;
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border: 1px solid var(--glass-border);
+    border-radius: 1rem;
+    background: var(--section-bg);
+    box-shadow: 0 4px 20px var(--card-shadow);
+}
+
+.ai-mode-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.ai-copy {
+    border: 1px solid var(--glass-border);
+    background: var(--hover-bg);
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.ai-copy:hover {
+    border-color: var(--accent-color);
+}
+
+.ai-markdown {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+    background: transparent;
+    border: none;
+    margin: 0;
+}
+
+body.ai-mode {
+    background: var(--background-color);
+}
+
+body.ai-mode header,
+body.ai-mode section:not(.ai-mode-panel) {
+    display: none;
+}
+
+body.ai-mode .nav-links,
+body.ai-mode .hamburger-menu,
+body.ai-mode .language-switcher {
+    display: none;
+}
+
+body.ai-mode .ai-mode-panel {
+    display: block;
 }
 
 /* Profile Section Styles */

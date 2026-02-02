@@ -34,6 +34,37 @@ function toggleTheme() {
     localStorage.setItem('theme', newTheme);
 }
 
+function setAiMode(enabled) {
+    document.body.classList.toggle('ai-mode', enabled);
+    localStorage.setItem('aiMode', enabled ? 'on' : 'off');
+
+    const aiToggle = document.getElementById('ai-toggle');
+    if (aiToggle) {
+        aiToggle.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+    }
+}
+
+function initAiMode() {
+    const savedAiMode = localStorage.getItem('aiMode');
+    setAiMode(savedAiMode === 'on');
+}
+
+function toggleAiMode() {
+    const enabled = !document.body.classList.contains('ai-mode');
+    setAiMode(enabled);
+}
+
+function updateAiMarkdown(lang) {
+    const markdownTarget = document.getElementById('ai-markdown');
+    if (!markdownTarget) return;
+
+    const template = document.getElementById(`ai-markdown-${lang}`);
+    if (!template) return;
+
+    const content = template.content ? template.content.textContent : template.textContent;
+    markdownTarget.textContent = content.trim();
+}
+
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize scroll animations if they exist
@@ -46,10 +77,53 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize theme
     initTheme();
 
+    // Initialize AI mode
+    initAiMode();
+
     // Add theme toggle event listener if the button exists
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         themeToggle.addEventListener('click', toggleTheme);
+    }
+
+    const aiToggle = document.getElementById('ai-toggle');
+    if (aiToggle) {
+        aiToggle.addEventListener('click', toggleAiMode);
+    }
+
+    const aiCopy = document.getElementById('ai-copy');
+    if (aiCopy) {
+        aiCopy.addEventListener('click', async () => {
+            const markdownTarget = document.getElementById('ai-markdown');
+            if (!markdownTarget) return;
+
+            const text = markdownTarget.textContent;
+            try {
+                if (navigator.clipboard?.writeText) {
+                    await navigator.clipboard.writeText(text);
+                } else {
+                    const textarea = document.createElement('textarea');
+                    textarea.value = text;
+                    textarea.setAttribute('readonly', '');
+                    textarea.style.position = 'absolute';
+                    textarea.style.left = '-9999px';
+                    document.body.appendChild(textarea);
+                    textarea.select();
+                    document.execCommand('copy');
+                    textarea.remove();
+                }
+                const savedLanguage = localStorage.getItem('language') || 'en';
+                aiCopy.textContent = savedLanguage === 'de' ? 'Kopiert!' : 'Copied!';
+                setTimeout(() => {
+                    const label = aiCopy.getAttribute(`data-${savedLanguage}`);
+                    if (label) {
+                        aiCopy.textContent = label;
+                    }
+                }, 1500);
+            } catch (error) {
+                console.error('Failed to copy AI markdown.', error);
+            }
+        });
     }
 
     // Initialize hamburger menu
@@ -110,4 +184,6 @@ function setLanguage(lang) {
             el.textContent = translation;
         }
     });
+
+    updateAiMarkdown(lang);
 }
