@@ -11,6 +11,8 @@ Time is a convenient trigger because it is easy to implement. "Run every morning
 
 That is the direction I want more agent systems to move toward. An agent should not just wake up because the clock says so. It should wake up because something meaningful happened.
 
+I am also experimenting with some of this now in my [SlaveCaller](https://github.com/Lukafin/SlaveCaller) project. What interests me there is not just talking to an agent on demand, but pushing toward agents that can stay in the background, react to richer context, and only step forward when there is a good reason.
+
 ## Time Is a Weak Proxy for Relevance
 
 Most reminders and automations are still built as if time is the primary source of truth. That works for recurring chores, but it breaks down fast for everything else.
@@ -41,6 +43,10 @@ This is also where AI becomes much more interesting. The job is not only to exec
 This is why I think the current wave of agents gives us a real shot at building [Calm Technology](https://en.wikipedia.org/wiki/Calm_technology) properly.
 
 The old dream of calm tech was that computers would move more into the periphery, stay out of the way, and surface information without constantly demanding attention. That idea always felt right, but the systems were too dumb. They could notify, but they could not really judge.
+
+That was the hard part for a long time. Scott Jenson's piece on ["EasyHard" home automation](https://jenson.org/easyhard/) still feels right: the naive rule sounds simple, but the real world immediately piles on edge cases, exceptions, and social context. Turning on the lights when someone enters a room sounds trivial until someone is sleeping, a pet triggers the sensor, or the system needs to understand intent instead of just motion.
+
+Older automation stacks mostly left those details to brittle rules and endless manual tweaking. What feels different now is that we finally have a credible shot at handling more of that nuance. Models are still imperfect, but they are much better at weighing context, picking conservative defaults, and taking care of the messy details that used to make calm interactions fall apart.
 
 Now we finally have models that can reason about context well enough to ask:
 
