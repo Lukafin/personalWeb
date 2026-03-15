@@ -65,6 +65,8 @@ It is also interesting to watch which mobile OS will first admit that most apps 
 
 That is part of why I still think devices like the Rabbit R1 and Humane AI Pin got a lot of things right, even if the execution did not fully land. They were pushing on an important idea: interaction should be more ambient, less app-centric, and less dependent on staring at a grid of icons. In that sense they remind me a bit of [General Magic](https://en.wikipedia.org/wiki/General_Magic): the core idea was important, but execution and timing were too early. My guess is that a bigger tech player will take some of those instincts, improve the implementation dramatically, and execute the idea much better.
 
+I also catch myself thinking too much in the old categories: web app, mobile app, desktop app. That language is still useful, but it already feels a bit outdated compared to how I actually work. More and more, I mostly use agents for what I do, and the interface category matters less than whether the system can act, observe context, and reach me well when needed. The [agentic os: the next ui revolution](https://zeitraum.blog/en/post/019ccea8-6ff7-7423-8fab-3c2c0825168d) article captures that feeling very well for me.
+
 ## The Best Agent May Be the One You Barely Notice
 
 The ideal future is not an AI that constantly talks to us. It is an AI that works in the background, quietly, using multiple triggers to understand when work should start and when attention is actually warranted.
