@@ -63,7 +63,7 @@ Google's [Little Signals](https://littlesignals.withgoogle.com/) is still one of
 
 It is also interesting to watch which mobile OS will first admit that most apps are increasingly things of the past. I can easily imagine the phone becoming more of a coordination layer: the place where we connect all the services we use and all the home hardware that can ping us, while the agent decides what deserves attention and how it should surface.
 
-That is part of why I still think devices like the Rabbit R1 and Humane AI Pin got a lot of things right, even if the execution did not fully land. They were pushing on an important idea: interaction should be more ambient, less app-centric, and less dependent on staring at a grid of icons. My guess is that a bigger tech player will take some of those instincts, improve the implementation dramatically, and execute the idea much better.
+That is part of why I still think devices like the Rabbit R1 and Humane AI Pin got a lot of things right, even if the execution did not fully land. They were pushing on an important idea: interaction should be more ambient, less app-centric, and less dependent on staring at a grid of icons. In that sense they remind me a bit of [General Magic](https://en.wikipedia.org/wiki/General_Magic): the core idea was important, but execution and timing were too early. My guess is that a bigger tech player will take some of those instincts, improve the implementation dramatically, and execute the idea much better.
 
 ## The Best Agent May Be the One You Barely Notice
 
