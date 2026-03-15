@@ -11,7 +11,7 @@ Time is a convenient trigger because it is easy to implement. "Run every morning
 
 That is the direction I want more agent systems to move toward. An agent should not just wake up because the clock says so. It should wake up because something meaningful happened.
 
-I am also experimenting with some of this now in my [SlaveCaller](https://github.com/Lukafin/SlaveCaller) project. What interests me there is not just talking to an agent on demand, but pushing toward agents that can stay in the background, react to richer context, and only step forward when there is a good reason.
+I am also experimenting with some of this now in my Lutkar projects. What interests me there is not just talking to an agent on demand, but pushing toward systems that can stay in the background, react to richer context, and only step forward when there is a good reason.
 
 ## Time Is a Weak Proxy for Relevance
 
@@ -60,6 +60,10 @@ That last part matters a lot. The value is not just in detecting that something 
 Sometimes the right answer is a tiny ambient cue. Sometimes it is a silent notification. Sometimes it is a light pulse in the room, a symbol on a small display, a vibration on a watch, or a short spoken prompt because the user is already moving around and not looking at a screen. And sometimes the correct action is no interruption at all.
 
 Google's [Little Signals](https://littlesignals.withgoogle.com/) is still one of my favorite references here because it explores exactly this idea: information does not always need to arrive as another loud rectangle on a phone. It can be physical, ambient, peripheral, and calm.
+
+It is also interesting to watch which mobile OS will first admit that most apps are increasingly things of the past. I can easily imagine the phone becoming more of a coordination layer: the place where we connect all the services we use and all the home hardware that can ping us, while the agent decides what deserves attention and how it should surface.
+
+That is part of why I still think devices like the Rabbit R1 and Humane AI Pin got a lot of things right, even if the execution did not fully land. They were pushing on an important idea: interaction should be more ambient, less app-centric, and less dependent on staring at a grid of icons. My guess is that a bigger tech player will take some of those instincts, improve the implementation dramatically, and execute the idea much better.
 
 ## The Best Agent May Be the One You Barely Notice
 
