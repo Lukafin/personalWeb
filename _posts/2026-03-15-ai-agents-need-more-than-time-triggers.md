@@ -69,6 +69,8 @@ That is part of why I still think devices like the Rabbit R1 and Humane AI Pin g
 
 I also catch myself thinking too much in the old categories: web app, mobile app, desktop app. That language is still useful, but it already feels a bit outdated compared to how I actually work. More and more, I mostly use agents for what I do, and the interface category matters less than whether the system can act, observe context, and reach me well when needed. The [agentic os: the next ui revolution](https://zeitraum.blog/en/post/019ccea8-6ff7-7423-8fab-3c2c0825168d) article captures that feeling very well for me.
 
+I also have a soft spot for [Viv](https://www.wired.com/story/the-ai-that-could-conquer-the-world/), because that vision of an AI system blending into the background and acting more like an ambient utility made me believe this kind of interface shift would happen much sooner.
+
 ## The Best Agent May Be the One You Barely Notice
 
 The ideal future is not an AI that constantly talks to us. It is an AI that works in the background, quietly, using multiple triggers to understand when work should start and when attention is actually warranted.
