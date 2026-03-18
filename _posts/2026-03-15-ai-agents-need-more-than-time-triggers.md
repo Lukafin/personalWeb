@@ -59,6 +59,8 @@ That last part matters a lot. The value is not just in detecting that something 
 
 Sometimes the right answer is a tiny ambient cue. Sometimes it is a silent notification. Sometimes it is a light pulse in the room, a symbol on a small display, a vibration on a watch, or a short spoken prompt because the user is already moving around and not looking at a screen. And sometimes the correct action is no interruption at all.
 
+I am also aware this really needs strong local AI models to be acceptable. If every useful trigger has to be shipped off-device to the cloud, this becomes an even faster death of privacy instead of a better human-computer interface.
+
 Google's [Little Signals](https://littlesignals.withgoogle.com/) is still one of my favorite references here because it explores exactly this idea: information does not always need to arrive as another loud rectangle on a phone. It can be physical, ambient, peripheral, and calm.
 
 It is also interesting to watch which mobile OS will first admit that most apps are increasingly things of the past. I can easily imagine the phone becoming more of a coordination layer: the place where we connect all the services we use and all the home hardware that can ping us, while the agent decides what deserves attention and how it should surface.
