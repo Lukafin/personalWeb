@@ -80,4 +80,4 @@ That means two design problems matter as much as the model itself:
 
 I think this is where agent products can become genuinely better than today's assistants. Not by becoming louder or more chatty, but by becoming more situationally aware and more respectful of human attention.
 
-Time triggers are a good start. But they should be just one sensor in a much larger system.
+Time triggers are a good start. But they should be just one sensor in a much larger system. I hope this kind of technology arrives sooner rather than later, because I do not want to watch my kids' brains get shaped by the same addictive patterns that already trap so many kids today, and plenty of adults too. I also hope Jony Ive, or someone else with that level of product taste and discipline, helps finally make this work properly.
