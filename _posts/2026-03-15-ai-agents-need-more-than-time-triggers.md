@@ -1,23 +1,23 @@
 ---
 layout: post
-title: "AI agents need more than time triggers"
-date: 2026-03-15 09:00:00 +0100
+title: "Agents need more than time triggers"
+date: 2026-03-24 09:00:00 +0100
 categories: [ai, agents, calm-tech]
 ---
 
-When I look at projects like OpenClaw, I keep thinking the same thing: schedule-based automation is useful, but it is only a small slice of what an agent should react to.
+While building my home AI agent Lutkar (i know it does not make sense to do this while there are better options like Openclaw or its clones out there) I keep thinking the same thing: schedule-based automation is useful, but it is only a small slice of what an agent should react to.
 
 Time is a convenient trigger because it is easy to implement. "Run every morning at 7" or "check this every hour" is much better than nothing. But real life is not organized around cron jobs. The useful moments for an agent are often triggered by context: a sound, a camera event, a door opening, a temperature change, a movement sensor, a phone connecting to the home network, or some combination of signals that says, "now this matters."
 
 That is the direction I want more agent systems to move toward. An agent should not just wake up because the clock says so. It should wake up because something meaningful happened.
 
-I am also experimenting with some of this now in my Lutkar projects. What interests me there is not just talking to an agent on demand, but pushing toward systems that can stay in the background, react to richer context, and only step forward when there is a good reason.
+What interests me there is not just talking to an agent on demand, but pushing toward systems that can stay in the background, react to richer context, and only step forward when there is a good reason.
 
 ## Time Is a Weak Proxy for Relevance
 
 Most reminders and automations are still built as if time is the primary source of truth. That works for recurring chores, but it breaks down fast for everything else.
 
-If I want an agent to help me at home, I do not actually care that it runs at 18:00 every day. I care that it notices the kids are asleep, that someone arrived home, that the washing machine finished, that the weather changed, that the living room got noisy, or that a package is at the door. Those are the events that make information timely.
+If I want an agent to help me at home, I do not actually care that it runs at 18:00 every day. I care that it notices the kids are asleep, that someone arrived home, that the living room got noisy, or that a package is at the door. Those are the events that make information timely.
 
 The same is true for personal productivity. Maybe the right trigger is not 9 AM, but the moment I sit at my desk, put on headphones, and open my laptop. Maybe it is when my camera sees I am away, so a message can wait. Maybe it is when the ambient noise drops and a short spoken summary becomes acceptable. A good agent should be able to use these signals instead of pretending every day is identical.
 
@@ -69,8 +69,6 @@ That is part of why I still think devices like the Rabbit R1 and Humane AI Pin g
 
 I also catch myself thinking too much in the old categories: web app, mobile app, desktop app. That language is still useful, but it already feels a bit outdated compared to how I actually work. More and more, I mostly use agents for what I do, and the interface category matters less than whether the system can act, observe context, and reach me well when needed. The [agentic os: the next ui revolution](https://zeitraum.blog/en/post/019ccea8-6ff7-7423-8fab-3c2c0825168d) article captures that feeling very well for me.
 
-I also have a soft spot for [Viv](https://www.wired.com/story/the-ai-that-could-conquer-the-world/), because that vision of an AI system blending into the background and acting more like an ambient utility made me believe this kind of interface shift would happen much sooner.
-
 ## The Best Agent May Be the One You Barely Notice
 
 The ideal future is not an AI that constantly talks to us. It is an AI that works in the background, quietly, using multiple triggers to understand when work should start and when attention is actually warranted.
@@ -82,4 +80,4 @@ That means two design problems matter as much as the model itself:
 
 I think this is where agent products can become genuinely better than today's assistants. Not by becoming louder or more chatty, but by becoming more situationally aware and more respectful of human attention.
 
-Time triggers are a good start. But they should be just one sensor in a much larger system. I hope this kind of technology arrives sooner rather than later, because I do not want to watch my kids' brains get shaped by the same addictive patterns that already trap so many kids today, and plenty of adults too. I also hope Jony Ive, or someone else with that level of product taste and discipline, helps finally make this work properly.
+Time triggers are a good start. But they should be just one sensor in a much larger system. I hope this kind of technology arrives sooner rather than later, because I do not want to watch my kids' brains get shaped by the same addictive patterns that already trap so many people today.
