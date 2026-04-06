@@ -637,6 +637,64 @@ body.ai-mode .ai-mode-panel {
     color: white;
 }
 
+.agent-world-section {
+    padding-top: 1rem;
+}
+
+.agent-world-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.agent-world-card {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.agent-world-eyebrow {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.35rem 0.75rem;
+    border-radius: 999px;
+    background: rgba(169, 132, 103, 0.12);
+    color: var(--accent-color);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.agent-world-note {
+    color: var(--secondary-color);
+}
+
+.agent-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.agent-links .cta-secondary,
+.agent-world-card .cta-primary {
+    display: inline-flex;
+    align-self: flex-start;
+    align-items: center;
+    justify-content: center;
+}
+
+.agentmail-link {
+    border: 1px solid rgba(169, 132, 103, 0.25);
+    border-radius: 0.9rem;
+    background: rgba(169, 132, 103, 0.08);
+}
+
+.agentmail-link:hover {
+    background: rgba(156, 102, 68, 0.14);
+}
+
 /* Scroll Animation Styles */
 .scroll-animation {
     opacity: 0;

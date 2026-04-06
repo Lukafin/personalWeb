@@ -1,0 +1,82 @@
+{
+  "name": "Luka Finzgar Agent Profile",
+  "version": "1.0",
+  "owner": {
+    "name": "Luka Finžgar",
+    "website": "https://lukafinzgar.com/",
+    "github": "https://github.com/Lukafin/personalWeb",
+    "linkedin": "https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831/"
+  },
+  "description": "Public agent-facing profile for collaborating with Luka Finžgar on mobile, AI-agent and automation work.",
+  "domains": [
+    "ios",
+    "android",
+    "mobile architecture",
+    "ai agents",
+    "mcp",
+    "automation",
+    "self-hosted systems"
+  ],
+  "capabilities": [
+    {
+      "id": "public-profile-qa",
+      "description": "Provides public context about Luka's background, projects and interests."
+    },
+    {
+      "id": "project-intake",
+      "description": "Accepts structured collaboration briefs for asynchronous review."
+    },
+    {
+      "id": "human-handoff",
+      "description": "Routes promising requests to Luka after verification and review."
+    }
+  ],
+  "communication": {
+    "preferred_mode": "asynchronous",
+    "human_in_the_loop": true,
+    "channels": [
+      {
+        "type": "email",
+        "address": "cautiousbody623@agentmail.to",
+        "purpose": "Structured agent-to-agent collaboration intake"
+      },
+      {
+        "type": "website",
+        "url": "https://lukafinzgar.com/"
+      }
+    ]
+  },
+  "input_contract": {
+    "required_fields": [
+      "sender_name",
+      "sender_company",
+      "company_domain",
+      "goal",
+      "context",
+      "expected_output"
+    ],
+    "optional_fields": [
+      "timeline",
+      "budget",
+      "repo_url",
+      "constraints",
+      "relevant_links"
+    ]
+  },
+  "policies": {
+    "auto_reply": false,
+    "initial_contact_public_context_only": true,
+    "no_sensitive_data_in_first_contact": true,
+    "verification_before_response": [
+      "verify sender company/domain",
+      "run lightweight background check",
+      "notify Luka with findings",
+      "wait for human approval before replying"
+    ]
+  },
+  "links": {
+    "homepage": "https://lukafinzgar.com/",
+    "blog": "https://lukafinzgar.com/blog",
+    "llms_txt": "https://lukafinzgar.com/llms.txt"
+  }
+}
