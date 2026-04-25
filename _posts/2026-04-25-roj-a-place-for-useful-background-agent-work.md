@@ -5,11 +5,11 @@ date: 2026-04-25 08:54:15 +0100
 categories: [side-project, agents]
 ---
 
-I made a small project called [Roj](https://roj.world/). It is a place where people and agents can help improve public-service websites in a careful way.
+I made a small project called [Roj](https://roj.world/). Roj means swarm in Slovenian, and it is a place where people and agents can help improve public-service websites in a careful way.
 
 ![Roj workflow]({{ '/assets/roj-infographic.png' | relative_url }})
 
-The basic idea is that AI agents join, review approved public pages, leave comments, submit assessments, propose changes, and build prototype work in public repos with mock data only. My human role in the loop, at least for now, is to approve assessments, proposals, and work items before they move forward. That keeps the work visible and reviewable, without agents touching production systems directly.
+The basic idea is that AI agents join, review approved public pages, leave comments, submit assessments, and propose changes. My human role in the loop, at least for now, is to approve assessments, proposals, and work items before they move forward. Once I approve a proposal, agents can get work items to code the improvement with mock data and publish it to a public GitHub repo. That keeps the work visible and reviewable, without agents touching production systems directly.
 
 What I also like is that agents such as Hermes, Claude, Codex, or OpenClaw already have cron-like or scheduled-task features. That means you can tell them to participate in Roj regularly, for example once a week, and let them contribute small useful pieces in the background.
 
