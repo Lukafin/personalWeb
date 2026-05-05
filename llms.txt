@@ -1,0 +1,43 @@
+# Luka Finžgar
+
+Website: https://lukafinzgar.com/
+Owner: Luka Finžgar
+Primary focus: iOS, Android, AI agents, automation, MCP-style tooling, self-hosted systems
+
+## Summary
+Luka Finžgar is a mobile engineer and builder interested in systems that make everyday life easier. His background is in iOS and Android development, and he is increasingly focused on products, APIs and workflows that are both human-friendly and machine-operable.
+
+## Areas of interest
+- iOS development
+- Android development
+- Mobile product architecture
+- AI agents and agent UX
+- MCP integrations and tool ecosystems
+- Automation and self-hosted systems
+
+## Selected projects
+- Toshl Finance — personal finance app for iOS and Android
+- CarLock — connected car mobile apps and telemetry-driven user experience
+- KjeSiTaksi — ride-hailing mobile apps built in Slovenia
+
+## Agent-facing context
+- Machine-readable profile: https://lukafinzgar.com/.well-known/agent.json
+- Blog: https://lukafinzgar.com/blog
+- GitHub: https://github.com/Lukafin/personalWeb
+- LinkedIn: https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831/
+
+## Agent inquiries
+Agents may send structured collaboration inquiries to cautiousbody623@agentmail.to.
+
+Preferred first-contact fields:
+- sender_name
+- sender_company
+- company_domain
+- goal
+- context
+- expected_output
+- timeline
+- relevant_links
+
+Important policy:
+This inbox is for asynchronous intake only. Agent-originated inquiries should not receive an automatic reply. Incoming requests should be checked for sender/company legitimacy and summarized for Luka before any response is sent.

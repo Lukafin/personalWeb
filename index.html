@@ -27,6 +27,7 @@ layout: none
             <div class="nav-links">
                 <a href="#portfolio" data-en="Featured Projects" data-de="Projekte">Featured Projects</a>
                 <a href="#expertise" data-en="Technical Expertise" data-de="Fachkenntnisse">Technical Expertise</a>
+                <a href="#agents" data-en="For AI Agents" data-de="Für KI-Agenten">For AI Agents</a>
                 <a href="#contact" data-en="Let's Connect" data-de="Kontakt">Let's Connect</a>
                 <a href="/blog" data-en="Blog" data-de="Blog">Blog</a>
             </div>
@@ -110,10 +111,18 @@ layout: none
 - Development Tools: Git, Bitrise CI, Zeplin
 - Languages: Slovenian (Native), English (C1-C2), German (A1-B1)
 
+## Building for the agent-native world
+- I am increasingly interested in software systems that work well for humans and are also legible to AI agents acting on their behalf.
+- Public machine-readable profile: https://lukafinzgar.com/.well-known/agent.json
+- LLM-friendly context: https://lukafinzgar.com/llms.txt
+- Agent inquiries: mailto:cautiousbody623@agentmail.to
+- Incoming agent inquiries are reviewed asynchronously. My agent is expected to verify the sender's company, do a lightweight background check, and route the result to me before any reply is sent.
+
 ## Contact
 - LinkedIn: https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831/
 - Twitter: https://twitter.com/lukafinzgar
 - Email: mailto:lukafin@gmail.com
+- AgentMail: mailto:cautiousbody623@agentmail.to
     </template>
 
     <template id="ai-markdown-de">
@@ -137,10 +146,18 @@ layout: none
 - Entwicklungswerkzeuge: Git, Bitrise CI, Zeplin
 - Sprachen: Slowenisch (Muttersprache), Englisch (C1-C2), Deutsch (A1-B1)
 
+## Für die agentische Welt bauen
+- Ich interessiere mich zunehmend für Softwaresysteme, die für Menschen nützlich und zugleich für KI-Agenten lesbar sind, die in ihrem Auftrag handeln.
+- Öffentliches maschinenlesbares Profil: https://lukafinzgar.com/.well-known/agent.json
+- LLM-freundlicher Kontext: https://lukafinzgar.com/llms.txt
+- Agenten-Anfragen: mailto:cautiousbody623@agentmail.to
+- Eingehende Agenten-Anfragen werden asynchron geprüft. Mein Agent soll das Unternehmen des Absenders verifizieren, einen leichten Background-Check durchführen und mir die Ergebnisse weiterleiten, bevor irgendeine Antwort versendet wird.
+
 ## Kontakt
 - LinkedIn: https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831/
 - Twitter: https://twitter.com/lukafinzgar
 - E-Mail: mailto:lukafin@gmail.com
+- AgentMail: mailto:cautiousbody623@agentmail.to
     </template>
 
     <header class="scroll-animation">
@@ -204,6 +221,26 @@ layout: none
         </div>
     </section>
 
+    <section id="agents" class="scroll-animation agent-world-section">
+        <h2 class="scroll-animation" data-en="Building for the agent-native world" data-de="Bauen für die agentische Welt">Building for the agent-native world</h2>
+        <div class="agent-world-grid">
+            <article class="portfolio-item scroll-animation agent-world-card">
+                <span class="agent-world-eyebrow" data-en="Human + agent collaboration" data-de="Zusammenarbeit von Mensch und Agent">Human + agent collaboration</span>
+                <p data-en="I am increasingly interested in products, APIs and workflows that are both human-friendly and machine-operable. That means clear handoffs, machine-readable context and trust before automation." data-de="Ich interessiere mich zunehmend für Produkte, APIs und Abläufe, die zugleich menschenfreundlich und maschinenfähig sind. Dazu gehören klare Übergaben, maschinenlesbarer Kontext und Vertrauen vor Automatisierung.">I am increasingly interested in products, APIs and workflows that are both human-friendly and machine-operable. That means clear handoffs, machine-readable context and trust before automation.</p>
+                <div class="agent-links">
+                    <a href="/llms.txt" class="cta-secondary" data-en="Read llms.txt" data-de="llms.txt lesen">Read llms.txt</a>
+                    <a href="/.well-known/agent.json" class="cta-secondary" data-en="View agent.json" data-de="agent.json ansehen">View agent.json</a>
+                </div>
+            </article>
+            <article class="portfolio-item scroll-animation agent-world-card">
+                <span class="agent-world-eyebrow" data-en="AgentMail intake" data-de="AgentMail Eingang">AgentMail intake</span>
+                <p data-en="Agents can send collaboration inquiries to cautiousbody623@agentmail.to. The inbox is meant for structured, asynchronous requests about collaboration, project briefs and technical exploration." data-de="Agenten können Anfragen zur Zusammenarbeit an cautiousbody623@agentmail.to senden. Das Postfach ist für strukturierte, asynchrone Anfragen zu Zusammenarbeit, Projekt-Briefings und technischer Exploration gedacht.">Agents can send collaboration inquiries to cautiousbody623@agentmail.to. The inbox is meant for structured, asynchronous requests about collaboration, project briefs and technical exploration.</p>
+                <p class="agent-world-note" data-en="Important: Hermes should not auto-reply. Incoming requests should first verify the sender's company, run a lightweight background check and then notify Luka with the findings for human approval." data-de="Wichtig: Hermes soll nicht automatisch antworten. Eingehende Anfragen sollen zuerst das Unternehmen des Absenders verifizieren, einen leichten Background-Check durchführen und dann Luka mit den Ergebnissen benachrichtigen, damit ein Mensch freigeben kann.">Important: Hermes should not auto-reply. Incoming requests should first verify the sender's company, run a lightweight background check and then notify Luka with the findings for human approval.</p>
+                <a href="mailto:cautiousbody623@agentmail.to?subject=Agent%20collaboration%20inquiry" class="cta-primary" data-en="Send an agent inquiry" data-de="Agentenanfrage senden">Send an agent inquiry</a>
+            </article>
+        </div>
+    </section>
+
     <section id="contact" class="scroll-animation">
         <h2 class="scroll-animation" data-en="Let's Connect" data-de="Kontakt">Let's Connect</h2>
         <div class="contact-links scroll-animation">
@@ -224,6 +261,12 @@ layout: none
                     <path fill="currentColor" d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
                 Email
+            </a>
+            <a href="mailto:cautiousbody623@agentmail.to?subject=Agent%20collaboration%20inquiry" aria-label="Send an agent inquiry" class="agentmail-link">
+                <svg class="icon" viewBox="0 0 24 24" width="24" height="24">
+                    <path fill="currentColor" d="M12 2a3 3 0 0 1 3 3v1.06A7.002 7.002 0 0 1 19 12v2.59l1.7 1.7A1 1 0 0 1 20 18H4a1 1 0 0 1-.7-1.71L5 14.59V12a7.002 7.002 0 0 1 4-5.94V5a3 3 0 0 1 3-3zm0 2a1 1 0 0 0-1 1v.35a7.93 7.93 0 0 1 2 0V5a1 1 0 0 0-1-1zm-5 8v3a1 1 0 0 1-.29.71L6.41 16h11.18l-.3-.29A1 1 0 0 1 17 15v-3a5 5 0 0 0-10 0zm5 10a3 3 0 0 1-2.83-2h5.66A3 3 0 0 1 12 22z"/>
+                </svg>
+                <span data-en="AgentMail inquiries" data-de="AgentMail Anfragen">AgentMail inquiries</span>
             </a>
         </div>
     </section>
