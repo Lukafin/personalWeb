@@ -1128,7 +1128,7 @@ body::before {
 .blog-list,
 .post {
     position: relative;
-    width: min(1180px, calc(100vw - 32px));
+    width: min(1180px, calc(100vw - 56px));
     margin: 0 auto;
     padding: 118px 0 80px;
 }
@@ -1238,30 +1238,66 @@ body::before {
     margin: 0 0 12px;
 }
 
+.post-page .post-header,
+.post-page .post-hero-card {
+    min-height: auto;
+    display: block;
+    text-align: left;
+    padding: 0;
+    color: var(--warm-page-ink);
+}
+
+.post-hero-card {
+    border: 1px solid currentColor;
+    background:
+        linear-gradient(135deg, rgba(255, 236, 205, 0.28), transparent 42%),
+        var(--warm-hero);
+    box-shadow: 18px 18px 0 var(--warm-shadow);
+    overflow: hidden;
+}
+
+.post-eyebrow {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    padding: 18px 22px;
+    border-bottom: 1px solid currentColor;
+    background: rgba(255, 255, 255, 0.14);
+}
+
 .back-to-posts {
     display: inline-flex;
-    margin-bottom: 12px;
-    color: var(--warm-footer);
+    align-items: center;
+    color: inherit;
     text-decoration: none;
 }
 
-.back-to-posts:hover { text-decoration: underline; }
-
+.back-to-posts:hover { text-decoration: underline; text-underline-offset: 3px; }
 
 .post-header h1 {
     font-size: clamp(44px, 6.5vw, 86px);
     line-height: 0.95;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.055em;
+    max-width: 980px;
+}
+
+.post-hero-card h1 {
+    border: 0;
+    padding: clamp(28px, 5vw, 64px);
+    background: transparent;
 }
 
 .post .meta {
-    margin: 12px 0 0;
-    color: var(--warm-footer);
+    margin: 0;
+    color: inherit;
+    white-space: nowrap;
 }
 
 .post-content-wrapper {
     background: var(--warm-cream);
     padding: clamp(24px, 4vw, 54px);
+    box-shadow: 18px 18px 0 rgba(52, 37, 31, 0.45);
 }
 
 .entry {
@@ -1276,7 +1312,7 @@ body::before {
 .entry h3,
 .entry h4 {
     line-height: 1.04;
-    letter-spacing: -0.045em;
+    letter-spacing: -0.04em;
     font-weight: 860;
     margin: 2.2rem 0 0.8rem;
 }
@@ -1285,12 +1321,16 @@ body::before {
 .entry h3 { font-size: clamp(24px, 3vw, 34px); }
 .entry p { margin: 0 0 1.15rem; }
 .entry a { color: inherit; text-decoration-thickness: 2px; text-underline-offset: 3px; }
-.entry img { max-width: 100%; border: 1px solid currentColor; }
+.entry img {
+    max-width: 100%;
+    border: 1px solid currentColor;
+    box-shadow: 12px 12px 0 rgba(52, 37, 31, 0.18);
+}
 .entry blockquote {
     margin: 2rem 0;
     padding: 1rem 1.25rem;
     border-left: 6px solid currentColor;
-    background: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.18);
 }
 .entry code {
     background: rgba(0, 0, 0, 0.08);
@@ -1349,8 +1389,15 @@ body::before {
 
 @media (max-width: 620px) {
     .blog-list ul { grid-template-columns: 1fr; }
+    .blog-list,
+    .post { width: min(1180px, calc(100% - 24px)); }
     .blog-list > h1,
     .post-header h1 { font-size: 54px; }
+    .post-eyebrow { align-items: flex-start; flex-direction: column; }
+    .post-hero-card,
+    .post-content-wrapper,
+    .entry img,
+    .blog-list li:hover { box-shadow: none; }
     .blog-list li { min-height: 240px; }
     .entry { font-size: 16px; }
 }
