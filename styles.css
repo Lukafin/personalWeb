@@ -979,7 +979,7 @@ header.post-header {
     --warm-nav-bg: rgba(87, 47, 32, 0.76);
     --warm-nav-ink: #fff1de;
     --warm-nav-border: rgba(255, 230, 194, 0.34);
-    --warm-hero: #f3e4cf;
+    --warm-hero: #f4e4cf;
     --warm-sand: #ead8bf;
     --warm-amber: #f1b86d;
     --warm-cream: #fbedd9;
@@ -1249,9 +1249,7 @@ body::before {
 
 .post-hero-card {
     border: 1px solid currentColor;
-    background:
-        linear-gradient(135deg, rgba(255, 236, 205, 0.28), transparent 42%),
-        var(--warm-hero);
+    background: var(--warm-hero);
     overflow: hidden;
 }
 
