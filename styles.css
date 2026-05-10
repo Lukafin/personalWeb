@@ -1252,7 +1252,6 @@ body::before {
     background:
         linear-gradient(135deg, rgba(255, 236, 205, 0.28), transparent 42%),
         var(--warm-hero);
-    box-shadow: 18px 18px 0 var(--warm-shadow);
     overflow: hidden;
 }
 
@@ -1297,7 +1296,6 @@ body::before {
 .post-content-wrapper {
     background: var(--warm-cream);
     padding: clamp(24px, 4vw, 54px);
-    box-shadow: 18px 18px 0 rgba(52, 37, 31, 0.45);
 }
 
 .entry {
@@ -1394,8 +1392,6 @@ body::before {
     .blog-list > h1,
     .post-header h1 { font-size: 54px; }
     .post-eyebrow { align-items: flex-start; flex-direction: column; }
-    .post-hero-card,
-    .post-content-wrapper,
     .entry img,
     .blog-list li:hover { box-shadow: none; }
     .blog-list li { min-height: 240px; }
