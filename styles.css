@@ -1279,6 +1279,17 @@ body::before {
     background: rgba(255, 255, 255, 0.14);
 }
 
+.post-header .post-eyebrow a.back-to-posts,
+.post-eyebrow .meta {
+    line-height: 1;
+}
+
+.post-header .post-eyebrow a.back-to-posts {
+    display: inline-flex;
+    align-items: center;
+    margin: 0;
+}
+
 .back-to-posts {
     display: inline-flex;
     align-items: center;

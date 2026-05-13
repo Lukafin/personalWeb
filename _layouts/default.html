@@ -33,7 +33,7 @@
                 <a href="{{ '/#contact' | relative_url }}" data-en="Contact" data-de="Kontakt">Contact</a>
             </div>
             <div class="nav-controls" aria-label="Display controls">
-                {% unless page.hide_language_switcher %}
+                {% unless page.hide_language_switcher or page.layout == 'post' %}
                 <button id="en-lang" class="lang-btn" type="button" aria-label="Switch to English">EN</button>
                 <button id="de-lang" class="lang-btn" type="button" aria-label="Switch to German">DE</button>
                 {% endunless %}
