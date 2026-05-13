@@ -172,7 +172,7 @@ section {
 }
 
 .navbar {
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -1038,7 +1038,7 @@ body::before {
 }
 
 .card-nav.navbar {
-    position: fixed;
+    position: absolute;
     z-index: 30;
     left: 50%;
     right: auto;
@@ -1376,11 +1376,13 @@ body::before {
 @media (max-width: 760px) {
     body { padding-top: 0; }
     .card-nav.navbar {
-        position: sticky;
+        position: absolute;
         top: 8px;
-        left: auto;
+        left: 8px;
+        right: 8px;
         transform: none;
-        margin: 8px;
+        width: auto;
+        margin: 0;
         border-radius: 18px;
     }
     .card-nav .nav-content {
@@ -1397,7 +1399,7 @@ body::before {
     }
     .blog-list,
     .post {
-        padding-top: 22px;
+        padding-top: 112px;
     }
 }
 
