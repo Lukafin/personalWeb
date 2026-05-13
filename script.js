@@ -15,22 +15,28 @@ if (document.querySelectorAll('.scroll-animation').length > 0) {
 }
 
 // Theme toggle functionality
-function initTheme() {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const savedTheme = localStorage.getItem('theme');
-    
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-    } else if (prefersDark) {
-        document.documentElement.setAttribute('data-theme', 'dark');
+function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+
+    const themeToggle = document.getElementById('theme-toggle');
+    if (themeToggle) {
+        themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+        themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
     }
 }
 
+function initTheme() {
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme = localStorage.getItem('theme');
+    const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
+    applyTheme(initialTheme);
+}
+
 function toggleTheme() {
-    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
-    document.documentElement.setAttribute('data-theme', newTheme);
+    applyTheme(newTheme);
     localStorage.setItem('theme', newTheme);
 }
 
@@ -169,6 +175,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Language switching functionality
 function setLanguage(lang) {
+    const supportedLanguages = ['en', 'de'];
+    if (!supportedLanguages.includes(lang)) {
+        lang = 'en';
+    }
+
     const langButtons = {
         en: document.getElementById('en-lang'),
         de: document.getElementById('de-lang')
@@ -176,9 +187,13 @@ function setLanguage(lang) {
 
     if (!langButtons.en || !langButtons.de) return;
 
+    document.documentElement.setAttribute('lang', lang);
+
     // Update active button state
     Object.keys(langButtons).forEach(key => {
-        langButtons[key].classList.toggle('active', key === lang);
+        const isActive = key === lang;
+        langButtons[key].classList.toggle('active', isActive);
+        langButtons[key].setAttribute('aria-pressed', isActive ? 'true' : 'false');
     });
 
     // Store selected language
