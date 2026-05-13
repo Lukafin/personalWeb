@@ -1431,7 +1431,20 @@ body::before {
     .blog-list > h1,
     .post-header h1 { font-size: 54px; }
     .post-card-shell { border-radius: 20px; }
-    .post-eyebrow { align-items: flex-start; flex-direction: column; }
+    .post-eyebrow {
+        align-items: center;
+        flex-direction: row;
+        padding: 16px 18px;
+        gap: 10px;
+    }
+    .post-header .post-eyebrow a.back-to-posts,
+    .post-eyebrow .meta {
+        font-size: 11px;
+        letter-spacing: 0.1em;
+    }
+    .post .meta {
+        text-align: right;
+    }
     .entry img,
     .blog-list li:hover { box-shadow: none; }
     .blog-list li { min-height: 240px; }
