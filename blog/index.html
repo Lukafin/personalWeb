@@ -7,6 +7,10 @@ hide_language_switcher: true
 <div class="blog-list">
     <h1 data-en="Latest Blog Posts" data-de="Neueste Blogbeiträge">Latest Blog Posts</h1>
 
+    <div class="blog-actions" aria-label="Blog subscription options">
+      <a class="rss-link" href="{{ '/rss.xml' | relative_url }}" type="application/rss+xml">RSS feed</a>
+    </div>
+
     <ul>
       {% for post in site.posts %}
         <li>
