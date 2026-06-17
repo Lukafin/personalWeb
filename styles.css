@@ -1173,6 +1173,34 @@ body::before {
     font-weight: 850;
 }
 
+.blog-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin: 12px 0 0;
+}
+
+.rss-link {
+    display: inline-flex;
+    align-items: center;
+    min-height: 38px;
+    padding: 0 16px;
+    border: 1px solid currentColor;
+    background: var(--warm-cream);
+    color: var(--warm-page-ink);
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 850;
+}
+
+.rss-link:hover {
+    background: var(--warm-amber);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
 .blog-list ul {
     list-style: none;
     padding: 0;
