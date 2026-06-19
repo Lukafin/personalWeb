@@ -187,10 +187,25 @@ function initBlogFilters() {
     const visibleCount = blogIndex.querySelector('[data-blog-visible-count]');
     const emptyState = blogIndex.querySelector('[data-blog-empty]');
     const clearButton = blogIndex.querySelector('[data-blog-clear]');
+    const filterPanel = blogIndex.querySelector('.blog-filter-panel');
+    const filterToggle = blogIndex.querySelector('[data-blog-filter-toggle]');
 
     const params = new URLSearchParams(window.location.search);
     let selectedCategory = params.get('category') || 'all';
     let searchTerm = params.get('q') || '';
+
+    function setFilterPanelOpen(open, shouldFocus = false) {
+        if (!filterPanel) return;
+
+        filterPanel.hidden = !open;
+        if (filterToggle) {
+            filterToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+
+        if (open && shouldFocus) {
+            searchInput?.focus();
+        }
+    }
 
     function setActiveCategory(category) {
         selectedCategory = category || 'all';
@@ -259,7 +274,8 @@ function initBlogFilters() {
         button.addEventListener('click', () => {
             setActiveCategory(button.dataset.blogCategoryLink);
             filterPosts();
-            blogIndex.querySelector('.blog-filter-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            setFilterPanelOpen(true);
+            filterPanel?.scrollIntoView({ behavior: 'smooth', block: 'start' });
         });
     });
 
@@ -273,8 +289,22 @@ function initBlogFilters() {
         });
     }
 
+    if (filterToggle && filterPanel) {
+        filterToggle.addEventListener('click', () => {
+            setFilterPanelOpen(filterPanel.hidden, true);
+        });
+
+        filterPanel.addEventListener('keydown', event => {
+            if (event.key === 'Escape') {
+                setFilterPanelOpen(false);
+                filterToggle.focus();
+            }
+        });
+    }
+
     const hasCategory = categoryButtons.some(button => button.dataset.blogCategory === selectedCategory);
     setActiveCategory(hasCategory ? selectedCategory : 'all');
+    setFilterPanelOpen(Boolean(searchTerm || selectedCategory !== 'all'));
     filterPosts();
 }
 
