@@ -891,6 +891,7 @@ body.ai-mode .ai-mode-panel {
 }
 
 .blog-post[hidden],
+.blog-list [data-blog-post][hidden],
 .blog-empty-state[hidden] {
     display: none;
 }
@@ -1382,6 +1383,110 @@ body::before {
 .blog-search-toggle:hover,
 .blog-search-toggle[aria-expanded="true"] {
     text-decoration: none;
+}
+
+.blog-filter-panel {
+    margin: 12px 0 0;
+    padding: 18px;
+    border: 1px solid currentColor;
+    border-radius: 0;
+    background: var(--warm-cream);
+    color: var(--warm-page-ink);
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.blog-filter-panel[hidden] {
+    display: none;
+}
+
+.blog-search-label,
+.blog-results-summary {
+    color: inherit;
+    font-size: 12px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 850;
+}
+
+.blog-search-input {
+    width: 100%;
+    margin: 0;
+    border: 1px solid currentColor;
+    border-radius: 0;
+    background: var(--warm-hero);
+    color: var(--warm-page-ink);
+    font: inherit;
+    padding: 12px 14px;
+    letter-spacing: -0.02em;
+}
+
+.blog-search-input:focus {
+    border-color: currentColor;
+    box-shadow: 0 0 0 4px var(--warm-focus);
+    background: var(--warm-hero);
+}
+
+.blog-category-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.blog-category-filter,
+.blog-clear-filters {
+    min-height: 34px;
+    padding: 0 12px;
+    border: 1px solid currentColor;
+    border-radius: 0;
+    background: var(--warm-hero);
+    color: var(--warm-page-ink);
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 850;
+}
+
+.blog-category-filter:hover,
+.blog-category-filter.is-active,
+.blog-clear-filters:hover {
+    background: var(--warm-amber);
+    color: var(--warm-page-ink);
+    transform: translateY(-1px);
+}
+
+.blog-results-summary {
+    margin: 14px 0 0;
+}
+
+.blog-empty-state {
+    margin-top: 12px;
+    padding: 24px;
+    border: 1px solid currentColor;
+    border-radius: 0;
+    background: var(--warm-cream);
+    color: var(--warm-page-ink);
+    box-shadow: none;
+    text-align: left;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+}
+
+.blog-empty-state h2 {
+    margin: 0 0 8px;
+    color: inherit;
+    font-size: clamp(24px, 3vw, 34px);
+    line-height: 1.02;
+    letter-spacing: -0.045em;
+    font-weight: 860;
+}
+
+.blog-empty-state p {
+    margin: 0 0 16px;
 }
 
 .blog-list ul {
