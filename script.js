@@ -86,6 +86,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize AI mode
     initAiMode();
 
+    // Initialize blog search and category filters when present
+    initBlogFilters();
+
     // Add theme toggle event listener if the button exists
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
@@ -172,6 +175,108 @@ document.addEventListener('DOMContentLoaded', () => {
         setLanguage(savedLanguage);
     }
 });
+
+function initBlogFilters() {
+    const blogIndex = document.querySelector('[data-blog-index]');
+    if (!blogIndex) return;
+
+    const searchInput = blogIndex.querySelector('#blog-search');
+    const categoryButtons = Array.from(blogIndex.querySelectorAll('[data-blog-category]'));
+    const categoryLinks = Array.from(blogIndex.querySelectorAll('[data-blog-category-link]'));
+    const posts = Array.from(blogIndex.querySelectorAll('[data-blog-post]'));
+    const visibleCount = blogIndex.querySelector('[data-blog-visible-count]');
+    const emptyState = blogIndex.querySelector('[data-blog-empty]');
+    const clearButton = blogIndex.querySelector('[data-blog-clear]');
+
+    const params = new URLSearchParams(window.location.search);
+    let selectedCategory = params.get('category') || 'all';
+    let searchTerm = params.get('q') || '';
+
+    function setActiveCategory(category) {
+        selectedCategory = category || 'all';
+        categoryButtons.forEach(button => {
+            const isActive = button.dataset.blogCategory === selectedCategory;
+            button.classList.toggle('is-active', isActive);
+            button.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+        });
+    }
+
+    function updateUrl() {
+        const nextParams = new URLSearchParams(window.location.search);
+
+        if (searchTerm) {
+            nextParams.set('q', searchTerm);
+        } else {
+            nextParams.delete('q');
+        }
+
+        if (selectedCategory && selectedCategory !== 'all') {
+            nextParams.set('category', selectedCategory);
+        } else {
+            nextParams.delete('category');
+        }
+
+        const query = nextParams.toString();
+        const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
+        window.history.replaceState({}, '', nextUrl);
+    }
+
+    function filterPosts() {
+        const normalizedSearch = searchTerm.trim().toLowerCase();
+        let shown = 0;
+
+        posts.forEach(post => {
+            const postCategories = (post.dataset.categories || '').split(',').filter(Boolean);
+            const categoryMatches = selectedCategory === 'all' || postCategories.includes(selectedCategory);
+            const searchMatches = !normalizedSearch || (post.dataset.search || '').includes(normalizedSearch);
+            const shouldShow = categoryMatches && searchMatches;
+
+            post.hidden = !shouldShow;
+            if (shouldShow) shown += 1;
+        });
+
+        if (visibleCount) visibleCount.textContent = shown.toString();
+        if (emptyState) emptyState.hidden = shown !== 0;
+        updateUrl();
+    }
+
+    if (searchInput) {
+        searchInput.value = searchTerm;
+        searchInput.addEventListener('input', () => {
+            searchTerm = searchInput.value;
+            filterPosts();
+        });
+    }
+
+    categoryButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            setActiveCategory(button.dataset.blogCategory);
+            filterPosts();
+        });
+    });
+
+    categoryLinks.forEach(button => {
+        button.addEventListener('click', () => {
+            setActiveCategory(button.dataset.blogCategoryLink);
+            filterPosts();
+            blogIndex.querySelector('.blog-filter-panel')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    if (clearButton) {
+        clearButton.addEventListener('click', () => {
+            searchTerm = '';
+            if (searchInput) searchInput.value = '';
+            setActiveCategory('all');
+            filterPosts();
+            searchInput?.focus();
+        });
+    }
+
+    const hasCategory = categoryButtons.some(button => button.dataset.blogCategory === selectedCategory);
+    setActiveCategory(hasCategory ? selectedCategory : 'all');
+    filterPosts();
+}
 
 // Language switching functionality
 function setLanguage(lang) {

@@ -4,20 +4,64 @@ title: Blog
 hide_language_switcher: true
 ---
 
-<div class="blog-list">
-    <h1 data-en="Latest Blog Posts" data-de="Neueste Blogbeiträge">Latest Blog Posts</h1>
+<div class="blog-list" data-blog-index>
+    <div class="blog-hero">
+      <p class="blog-kicker">Writing</p>
+      <h1 data-en="Latest Blog Posts" data-de="Neueste Blogbeiträge">Latest Blog Posts</h1>
+      <p class="blog-intro">Notes on side projects, agents, mobile development, health research, and the small systems that help me build.</p>
+    </div>
 
     <div class="blog-actions" aria-label="Blog subscription options">
       <a class="rss-link" href="{{ '/rss.xml' | relative_url }}" type="application/rss+xml">RSS feed</a>
     </div>
 
-    <ul>
+    <section class="blog-filter-panel" aria-label="Filter blog posts">
+      <label class="blog-search-label" for="blog-search">Search posts</label>
+      <div class="blog-search-wrap">
+        <input id="blog-search" class="blog-search-input" type="search" placeholder="Search titles, excerpts, or categories" autocomplete="off">
+      </div>
+
+      <div class="blog-category-filters" role="group" aria-label="Categories">
+        <button class="blog-category-filter is-active" type="button" data-blog-category="all">All</button>
+        {% assign sorted_categories = site.categories | sort %}
+        {% for category in sorted_categories %}
+          {% assign category_name = category[0] %}
+          <button class="blog-category-filter" type="button" data-blog-category="{{ category_name | slugify }}">{{ category_name | replace: '-', ' ' }}</button>
+        {% endfor %}
+      </div>
+
+      <p class="blog-results-summary" aria-live="polite">
+        Showing <span data-blog-visible-count>{{ site.posts | size }}</span> of {{ site.posts | size }} posts
+      </p>
+    </section>
+
+    <ul class="blog-posts" data-blog-posts>
       {% for post in site.posts %}
-        <li>
-          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p class="post-date">{{ post.date | date_to_string }}</p>
-          <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</div>
+        {% capture searchable_categories %}{% for category in post.categories %} {{ category }} {{ category | replace: '-', ' ' }}{% endfor %}{% endcapture %}
+        <li class="blog-post-item" data-blog-post data-categories="{% for category in post.categories %}{{ category | slugify }}{% unless forloop.last %},{% endunless %}{% endfor %}" data-search="{{ post.title | append: ' ' | append: post.excerpt | append: searchable_categories | strip_html | normalize_whitespace | downcase | escape }}">
+          <article class="blog-post-card">
+            <div class="blog-post-card-meta">
+              <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+              {% if post.categories %}
+                <span aria-hidden="true">•</span>
+                <div class="blog-post-categories" role="group" aria-label="Categories">
+                  {% for category in post.categories %}
+                    <button class="blog-post-category" type="button" data-blog-category-link="{{ category | slugify }}">{{ category | replace: '-', ' ' }}</button>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+            <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+            <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</div>
+            <a href="{{ post.url | relative_url }}" class="read-more">Read more</a>
+          </article>
         </li>
       {% endfor %}
-    </ul> 
+    </ul>
+
+    <div class="blog-empty-state" data-blog-empty hidden>
+      <h2>No posts found</h2>
+      <p>Try a different search term or choose another category.</p>
+      <button class="blog-clear-filters" type="button" data-blog-clear>Clear filters</button>
+    </div>
 </div>
