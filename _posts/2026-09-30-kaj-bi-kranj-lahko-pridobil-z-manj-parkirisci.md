@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Kaj bi Kranj lahko pridobil z manj parkirišči?"
-date: 2026-09-30 00:00:00 +0200
+date: 2026-09-30 02:00:00 +0200
 categories: [side-project]
 ---
 
