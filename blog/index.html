@@ -4,20 +4,55 @@ title: Blog
 hide_language_switcher: true
 ---
 
-<div class="blog-list">
+<div class="blog-list" data-blog-index>
     <h1 data-en="Latest Blog Posts" data-de="Neueste Blogbeiträge">Latest Blog Posts</h1>
 
-    <div class="blog-actions" aria-label="Blog subscription options">
+    <div class="blog-actions" aria-label="Blog actions">
       <a class="rss-link" href="{{ '/rss.xml' | relative_url }}" type="application/rss+xml">RSS feed</a>
+      <button class="blog-search-toggle" type="button" data-blog-filter-toggle aria-expanded="false" aria-controls="blog-filter-panel">
+        <svg class="blog-search-toggle-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none">
+          <path d="m21 21-5.2-5.2m0 0a7.5 7.5 0 1 0-10.6-10.6 7.5 7.5 0 0 0 10.6 10.6Z" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span class="visually-hidden">Search and filter posts</span>
+      </button>
     </div>
 
-    <ul>
+    <section id="blog-filter-panel" class="blog-filter-panel" aria-label="Filter blog posts" hidden>
+      <label class="blog-search-label" for="blog-search">Search posts</label>
+      <div class="blog-search-wrap">
+        <input id="blog-search" class="blog-search-input" type="search" placeholder="Search titles, excerpts, or categories" autocomplete="off">
+      </div>
+
+      <div class="blog-category-filters" role="group" aria-label="Categories">
+        <button class="blog-category-filter is-active" type="button" data-blog-category="all">All</button>
+        {% assign sorted_categories = site.categories | sort %}
+        {% for category in sorted_categories %}
+          {% assign category_name = category[0] %}
+          <button class="blog-category-filter" type="button" data-blog-category="{{ category_name | slugify }}">{{ category_name | replace: '-', ' ' }}</button>
+        {% endfor %}
+      </div>
+
+      <p class="blog-results-summary" aria-live="polite">
+        Showing <span data-blog-visible-count>{{ site.posts | size }}</span> of {{ site.posts | size }} posts
+      </p>
+    </section>
+
+    <ul data-blog-posts>
       {% for post in site.posts %}
-        <li>
+        {% capture searchable_categories %}{% for category in post.categories %} {{ category }} {{ category | replace: '-', ' ' }}{% endfor %}{% endcapture %}
+        <li data-blog-post data-categories="{% for category in post.categories %}{{ category | slugify }}{% unless forloop.last %},{% endunless %}{% endfor %}" data-search="{{ post.title | append: ' ' | append: post.excerpt | append: searchable_categories | strip_html | normalize_whitespace | downcase | escape }}">
           <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p class="post-date">{{ post.date | date_to_string }}</p>
+          <p class="post-date">
+            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date_to_string }}</time>
+          </p>
           <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</div>
         </li>
       {% endfor %}
-    </ul> 
+    </ul>
+
+    <div class="blog-empty-state" data-blog-empty hidden>
+      <h2>No posts found</h2>
+      <p>Try a different search term or choose another category.</p>
+      <button class="blog-clear-filters" type="button" data-blog-clear>Clear filters</button>
+    </div>
 </div>
