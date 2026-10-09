@@ -1110,7 +1110,8 @@ body::before {
     border-left: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.card-nav .nav-controls--solo {
+.card-nav .nav-controls--solo,
+body.ai-mode .card-nav .nav-controls {
     padding-left: 0;
     border-left: 0;
 }
