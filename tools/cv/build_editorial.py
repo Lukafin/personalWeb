@@ -1,7 +1,7 @@
-"""Build a Slovenian or German Editorial CV from maintained translated content.
+"""Build one English, Slovenian or German Editorial CV from maintained content.
 
 Requires reportlab and the same Arial/Georgia fonts as the approved Editorial CV.
-The English CV and other variants are never opened for writing.
+Only the selected Editorial language is written; other design variants are never modified.
 """
 import argparse
 import json
@@ -15,15 +15,22 @@ from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument('--language', choices=['sl', 'de'], default='sl')
+parser.add_argument('--language', choices=['en', 'sl', 'de'], default='sl')
 parser.add_argument('--output')
 parser.add_argument('--font-dir', default='/System/Library/Fonts/Supplemental')
 args = parser.parse_args()
 if not args.output:
-    args.output = str(Path(__file__).resolve().parents[2] / f'assets/cv/luka-finzgar-cv-{args.language}.pdf')
+    suffix = '' if args.language == 'en' else f'-{args.language}'
+    args.output = str(Path(__file__).resolve().parents[2] / f'assets/cv/luka-finzgar-cv{suffix}.pdf')
 content = json.loads(Path(__file__).with_name(f'content-{args.language}.json').read_text())
 contacts = content['contacts']; profile = content['profile']; themes = content['themes']; roles = content['roles']; blog = content['blog']
 themes = [dict(t, items=t['items']) for t in themes]
+# Preserve each approved language's original paragraph spacing.
+spacing = {
+    'en': dict(rule=19, profile=8, themes=8, title=4, meta=4, body=4, after=3),
+    'sl': dict(rule=15, profile=6, themes=6, title=3, meta=3, body=3, after=2),
+    'de': dict(rule=15, profile=4, themes=4, title=2, meta=3, body=3, after=2),
+}[args.language]
 W,H=A4
 for name,filename in [('Sans','Arial.ttf'),('SansBold','Arial Bold.ttf'),('SansItalic','Arial Italic.ttf'),('Serif','Georgia.ttf'),('SerifBold','Georgia Bold.ttf')]:
     pdfmetrics.registerFont(TTFont(name,str(Path(args.font_dir)/filename)))
@@ -57,9 +64,9 @@ class Draw:
   return self.p(text,x+10,y,width-10,size=size,leading=leading,gap=gap)
 
 def metadata(c,name):
- c.setTitle('Luka Finžgar | '+('Življenjepis' if args.language == 'sl' else 'Lebenslauf'));c.setAuthor('Luka Finžgar')
- c.setSubject(content['position']+' | '+content['contacts'][0])
- c.setCatalogEntry('Lang', {'sl': 'sl-SI', 'de': 'de-DE'}[args.language])
+ c.setTitle('Luka Finžgar | '+{'en':'Editorial CV','sl':'Življenjepis','de':'Lebenslauf'}[args.language]);c.setAuthor('Luka Finžgar')
+ c.setSubject('Senior software engineer: mobile products, AI agent systems and current explorations' if args.language == 'en' else content['position']+' | '+content['contacts'][0])
+ if args.language != 'en':c.setCatalogEntry('Lang', {'sl': 'sl-SI', 'de': 'de-DE'}[args.language])
 
 def editorial():
  out=Path(args.output);c=canvas.Canvas(str(out),pagesize=A4);metadata(c,'Editorial');d=Draw(c)
@@ -70,18 +77,18 @@ def editorial():
  y=d.p(contacts[0],left,H-131,width,size=10.3,leading=14,color=MUTED,gap=13)
  y=d.p(contacts[1],left,y,width,size=9.4,leading=13,color=MUTED,gap=3)
  y=d.p(contacts[2],left,y,width,size=9.4,leading=13,color=MUTED,gap=11)
- d.line(left,y,right,PETROL,.9);y-=15
+ d.line(left,y,right,PETROL,.9);y-=spacing['rule']
  d.label(content['profile_heading'],left,y);y-=13
- y=d.p(profile,left,y,width,size=10.65,leading=14.8,gap=4 if args.language == 'de' else 6)
- y=d.p(content['themes_heading'],left,y,width,font='Serif',size=20,leading=24,gap=4 if args.language == 'de' else 6)
+ y=d.p(profile,left,y,width,size=10.65,leading=14.8,gap=spacing['profile'])
+ y=d.p(content['themes_heading'],left,y,width,font='Serif',size=20,leading=24,gap=spacing['themes'])
  for i,t in enumerate(themes,1):
   d.label(f'{i:02d}',left,y-12,color=WARM,size=8.5)
   x=left+27;tw=width-27
-  y=d.p(t['title'],x,y,tw,font='SerifBold',size=12.6,leading=16,gap=2 if args.language == 'de' else 3)
-  y=d.p(t['meta'],x,y,tw,size=8.8,leading=11.8,color=MUTED,gap=3)
+  y=d.p(t['title'],x,y,tw,font='SerifBold',size=12.6,leading=16,gap=spacing['title'])
+  y=d.p(t['meta'],x,y,tw,size=8.8,leading=11.8,color=MUTED,gap=spacing['meta'])
   for bul,text in t['items']:
-   y=d.bullet(text,x,y,tw,size=9.8,leading=13.25,gap=3) if bul else d.p(text,x,y,tw,size=9.8,leading=13.25,gap=3)
-  y-=2
+   y=d.bullet(text,x,y,tw,size=9.8,leading=13.25,gap=spacing['body']) if bul else d.p(text,x,y,tw,size=9.8,leading=13.25,gap=spacing['body'])
+  y-=spacing['after']
  y=d.p(blog,left+27,y,width-27,size=8.9,leading=12,color=MUTED)
  print('Editorial page 1 bottom:',round(y,1));d.footer(1);c.showPage()
  d.label(content['career_eyebrow'],left,H-35)

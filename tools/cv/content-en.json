@@ -1,0 +1,149 @@
+{
+  "name": "Luka Finžgar",
+  "position": "Senior Software Engineer",
+  "eyebrow": "Software / Systems / Products",
+  "contacts": [
+    "AI agent systems | Mobile products | Development automation",
+    "Kranj, Slovenia | +386 41 922 674 | <link href=\"mailto:lukafin@gmail.com\" color=\"#176A67\">lukafin@gmail.com</link>",
+    "<link href=\"https://lukafinzgar.com\" color=\"#176A67\">lukafinzgar.com</link> | <link href=\"https://github.com/Lukafin\" color=\"#176A67\">github.com/Lukafin</link> | <link href=\"https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831\" color=\"#176A67\">LinkedIn profile</link>"
+  ],
+  "profile_heading": "Profile",
+  "profile": "Software engineer with 16 years of iOS and Android experience, including cofounding products and working at Toshl and Netcetera. Over the past three years, my personal projects have connected AI capabilities with mobile apps, backend services, agent orchestration and development automation. My strength is making these pieces work together as useful, reviewable systems.",
+  "themes_heading": "Current Interests &amp; Explorations",
+  "themes": [
+    {
+      "title": "Agent orchestration &amp; coordination",
+      "meta": "Personal projects | Conductor and Roj",
+      "items": [
+        [
+          true,
+          "<b>Conductor:</b> Built a shared iOS, Android and desktop interface with a Python/FastAPI backend for managing agent instances. Explored recurring tasks, voice requests, skills and Android TV output."
+        ],
+        [
+          true,
+          "<b>Roj:</b> Developed a swarm directory with capability matching, qualification and human review. Its four current swarms review civic website UX, produce educational people infographics, fact-check news and headlines, and track election promises against implementation evidence."
+        ],
+        [
+          true,
+          "Added structured handoffs and evidence reviews in Roj, plus initial integrity reporting with temporary quarantine, audit trails and human escalation. <link href=\"https://roj.world\" color=\"#176A67\">roj.world</link>"
+        ]
+      ]
+    },
+    {
+      "title": "AI-assisted health research &amp; mobile products",
+      "meta": "Personal project | Health Research Companion",
+      "items": [
+        [
+          true,
+          "Built agents to regularly research my daughter's dermatitis, surfacing new research and promising therapies for further review."
+        ],
+        [
+          true,
+          "Built a mobile app for AI-assisted health research discovery and generated audio explanations of existing diagnoses and recent research."
+        ],
+        [
+          true,
+          "Made Android (Firebase App Testing) and iOS (TestFlight) betas available; designed the app to help users explore information and prepare discussions with their doctor."
+        ]
+      ]
+    },
+    {
+      "title": "Development automation",
+      "meta": "Personal workflows | GitHub Actions, coding agents, Sentry integrations",
+      "items": [
+        [
+          true,
+          "Built scheduled research, documentation and maintenance workflows that turn findings into agent-generated repair work."
+        ],
+        [
+          true,
+          "Connected Sentry alerts to coding-agent reproduction and proposed fixes; retained human pull-request review."
+        ]
+      ]
+    },
+    {
+      "title": "Emerging user interaction",
+      "meta": "Ongoing interest | MCP Apps and A2UI",
+      "items": [
+        [
+          false,
+          "Exploring how agents could surface task-specific interfaces when needed, combining conversational workflows with dynamically generated UI. Following MCP Apps and A2UI as emerging approaches to this direction."
+        ]
+      ]
+    }
+  ],
+  "blog": "Project details and development notes: <link href=\"https://lukafinzgar.com/blog/\" color=\"#176A67\">lukafinzgar.com/blog/</link>",
+  "career_eyebrow": "Experience / Background",
+  "career_heading": "Professional experience",
+  "career_intro": "Mobile engineering, product ownership and development practice",
+  "roles": [
+    [
+      "Netcetera",
+      "Mobile Application Developer | Ljubljana",
+      "Dec 2022 - present",
+      "Maintain iOS and Android applications across multiple projects. Introduced Kotlin Multiplatform into an existing project and explored AI agents to improve the development process."
+    ],
+    [
+      "Toshl Finance",
+      "Mobile Developer",
+      "Dec 2018 - present",
+      "Developed the Toshl personal finance management app across iOS and Android."
+    ],
+    [
+      "3fs",
+      "Mobile Developer",
+      "Mar 2017 - Dec 2018",
+      "Developed Android and iOS applications for multiple clients."
+    ],
+    [
+      "Umwerk GmbH",
+      "iOS Developer",
+      "Apr 2016 - Jan 2017",
+      "Worked on YOU, a video-streaming iOS application for German broadcaster RTL."
+    ],
+    [
+      "CarLock",
+      "Cofounder and Mobile Developer",
+      "Jan 2013 - Nov 2015",
+      "Planned and developed iOS and Android apps for a connected-car product, presenting driving-style information and data from an in-car device."
+    ],
+    [
+      "Xooltime, Inc.",
+      "Android Developer",
+      "Mar 2013 - Feb 2014",
+      "Developed a tablet learning application for a project where pupils used tablets in place of books and textbooks."
+    ],
+    [
+      "3fs",
+      "iOS Developer",
+      "Jun 2012 - Nov 2012",
+      "Developed an iOS prototype for Povio."
+    ],
+    [
+      "RS5 / KjeSiTaksi",
+      "Cofounder and Mobile Developer",
+      "Sep 2011 - Jun 2012",
+      "Planned and developed an early Slovenian ride-hailing application across iOS and Android."
+    ],
+    [
+      "Odpiralni Časi",
+      "Mobile Developer",
+      "Jan 2011 - May 2012",
+      "Developed Android and iOS applications using Java and Objective-C."
+    ]
+  ],
+  "sections": [
+    [
+      "Education",
+      "<b>University Diploma in Computer and Information Science</b><br/>Pre-Bologna university programme | University of Ljubljana<br/>Faculty of Computer and Information Science | 2003 - 2010"
+    ],
+    [
+      "Engineering strengths",
+      "<b>Mobile:</b> Swift, Objective-C, Kotlin, Java, Jetpack Compose, Kotlin Multiplatform.<br/><b>Agent systems:</b> orchestration, agent skills, evidence review and human approval.<br/><b>Delivery:</b> Git, Bitrise CI, GitHub Actions, automation and product development."
+    ],
+    [
+      "Languages and interests",
+      "<b>Languages:</b> Slovenian (native); English (C1-C2); German (basic).<br/><b>Interests:</b> ambient computing, useful background systems, and cities designed for walking and cycling."
+    ]
+  ]
+}
