@@ -1,0 +1,68 @@
+{
+  "name": "Luka Finžgar",
+  "position": "Senior-Softwareentwickler",
+  "eyebrow": "Software / Systeme / Produkte",
+  "contacts": [
+    "KI-Agentensysteme | Mobile Produkte | Entwicklungsautomatisierung",
+    "Kranj, Slowenien | +386 41 922 674 | <link href=\"mailto:lukafin@gmail.com\" color=\"#225C5D\">lukafin@gmail.com</link>",
+    "<link href=\"https://lukafinzgar.com\" color=\"#225C5D\">lukafinzgar.com</link> | <link href=\"https://github.com/Lukafin\" color=\"#225C5D\">github.com/Lukafin</link> | <link href=\"https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831\" color=\"#225C5D\">LinkedIn</link>"
+  ],
+  "profile_heading": "Profil",
+  "profile": "Softwareentwickler mit 16 Jahren Erfahrung in iOS und Android, auch als Mitgründer von Produkten und bei Toshl und Netcetera. In den letzten drei Jahren habe ich in eigenen Projekten KI mit mobilen Apps, Backend-Diensten, Agenten-Orchestrierung und Entwicklungsautomatisierung verbunden. Meine Stärke ist, diese Bausteine zu nützlichen, überprüfbaren Systemen zusammenzuführen.",
+  "themes_heading": "Aktuelle Interessen und Erkundungen",
+  "themes": [
+    {
+      "title": "Agenten-Orchestrierung und Zusammenarbeit",
+      "meta": "Eigene Projekte | Conductor und Roj",
+      "items": [
+        [true, "<b>Conductor:</b> Gemeinsame Oberfläche für iOS, Android und Desktop mit Python/FastAPI-Backend zur Verwaltung von Agenteninstanzen entwickelt. Wiederkehrende Aufgaben, Sprachaufträge, Agenten-Skills und Ausgabe auf Android TV erprobt."],
+        [true, "<b>Roj:</b> Schwarmverzeichnis mit Fähigkeitsabgleich, Qualifikationsprüfung und menschlicher Kontrolle entwickelt. Die vier aktuellen Schwärme prüfen die UX öffentlicher Websites, erstellen Bildungsinfografiken über Personen, prüfen Fakten in Nachrichten und Schlagzeilen und verfolgen die Umsetzung von Wahlversprechen anhand von Belegen."],
+        [true, "Strukturierte Aufgabenübergaben und Belegprüfungen sowie erste Integritätsmeldungen mit zeitweiliger Quarantäne, Audit-Trails und Eskalation an Menschen ergänzt. <link href=\"https://roj.world\" color=\"#225C5D\">roj.world</link>"]
+      ]
+    },
+    {
+      "title": "KI-gestützte Gesundheitsrecherche und mobile Produkte",
+      "meta": "Eigenes Projekt | Health Research Companion",
+      "items": [
+        [true, "Agenten entwickelt, die regelmäßig zur Dermatitis meiner Tochter recherchieren und neue Forschung sowie vielversprechende Therapien zur weiteren Prüfung aufzeigen."],
+        [true, "Mobile App zur KI-gestützten Suche nach Gesundheitsforschung und zur Erzeugung von Audioerklärungen bestehender Diagnosen und neuer Forschung entwickelt."],
+        [true, "Betaversionen für Android (Firebase App Testing) und iOS (TestFlight) bereitgestellt. Die App hilft, Informationen zu erkunden und Gespräche mit dem Arzt vorzubereiten."]
+      ]
+    },
+    {
+      "title": "Entwicklungsautomatisierung",
+      "meta": "Eigene Arbeitsabläufe | GitHub Actions, Coding-Agenten, Sentry-Anbindungen",
+      "items": [
+        [true, "Geplante Recherche-, Dokumentations- und Wartungsabläufe aufgebaut, die Erkenntnisse in von Agenten erstellte Reparaturarbeiten überführen."],
+        [true, "Sentry-Meldungen mit Coding-Agenten zur Fehlerreproduktion und für Korrekturvorschläge verbunden; menschliche Prüfung der Pull Requests beibehalten."]
+      ]
+    },
+    {
+      "title": "Neue Formen der Nutzerinteraktion",
+      "meta": "Fortlaufendes Interesse | MCP Apps und A2UI",
+      "items": [
+        [false, "Ich erkunde, wie Agenten bei Bedarf aufgabenspezifische Oberflächen bereitstellen und Gesprächsabläufe mit dynamisch erzeugter UI verbinden könnten. MCP Apps und A2UI verfolge ich als neue Ansätze in dieser Richtung."]
+      ]
+    }
+  ],
+  "blog": "Projektdetails und Entwicklungsnotizen: <link href=\"https://lukafinzgar.com/blog/\" color=\"#225C5D\">lukafinzgar.com/blog/</link>",
+  "career_eyebrow": "Erfahrung / Hintergrund",
+  "career_heading": "Berufserfahrung",
+  "career_intro": "Mobile Entwicklung, Produktverantwortung und Entwicklungspraxis",
+  "roles": [
+    ["Netcetera", "Entwickler mobiler Anwendungen | Ljubljana", "Dez. 2022 - heute", "Wartung von iOS- und Android-Anwendungen in mehreren Projekten. Kotlin Multiplatform in ein bestehendes Projekt eingeführt und KI-Agenten zur Verbesserung des Entwicklungsprozesses erprobt."],
+    ["Toshl Finance", "Mobile-Entwickler", "Dez. 2018 - heute", "Entwicklung der Toshl-App zur Verwaltung persönlicher Finanzen für iOS und Android."],
+    ["3fs", "Mobile-Entwickler", "März 2017 - Dez. 2018", "Entwicklung von Android- und iOS-Anwendungen für verschiedene Kunden."],
+    ["Umwerk GmbH", "iOS-Entwickler", "Apr. 2016 - Jan. 2017", "Mitarbeit an YOU, einer iOS-App für Videostreaming des deutschen Fernsehsenders RTL."],
+    ["CarLock", "Mitgründer und Mobile-Entwickler", "Jan. 2013 - Nov. 2015", "Planung und Entwicklung von iOS- und Android-Apps für ein Connected-Car-Produkt mit Informationen zum Fahrstil und Daten eines Geräts im Fahrzeug."],
+    ["Xooltime, Inc.", "Android-Entwickler", "März 2013 - Feb. 2014", "Entwicklung einer Lern-App für ein Projekt, in dem Schüler Tablets statt Büchern und Lehrbüchern nutzten."],
+    ["3fs", "iOS-Entwickler", "Juni 2012 - Nov. 2012", "Entwicklung eines iOS-Prototyps für Povio."],
+    ["RS5 / KjeSiTaksi", "Mitgründer und Mobile-Entwickler", "Sep. 2011 - Juni 2012", "Planung und Entwicklung einer frühen slowenischen App zur Taxibestellung für iOS und Android."],
+    ["Odpiralni Časi", "Mobile-Entwickler", "Jan. 2011 - Mai 2012", "Entwicklung von Android- und iOS-Anwendungen mit Java und Objective-C."]
+  ],
+  "sections": [
+    ["Ausbildung", "<b>BSc in Informatik</b> | Universität Ljubljana<br/>Fakultät für Informatik und Informationswissenschaft | 2003 - 2010"],
+    ["Technische Stärken", "<b>Mobile Entwicklung:</b> Swift, Objective-C, Kotlin, Java, Jetpack Compose, Kotlin Multiplatform.<br/><b>Agentensysteme:</b> Orchestrierung, Agenten-Skills, Belegprüfung und menschliche Freigabe.<br/><b>Umsetzung:</b> Git, Bitrise CI, GitHub Actions, Automatisierung und Produktentwicklung."],
+    ["Sprachen und Interessen", "<b>Sprachen:</b> Slowenisch (Muttersprache); Englisch (C1-C2); Deutsch (Grundkenntnisse).<br/><b>Interessen:</b> Ambient Computing, nützliche Hintergrundsysteme und Städte, die für Fußgänger und Radfahrer gestaltet sind."]
+  ]
+}

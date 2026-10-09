@@ -3,18 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 }}">
+    {% if page.layout == 'post' %}
+    <meta name="description" content="{{ page.excerpt | strip_html | truncate: 160 | escape }}">
+    {% else %}
+    <meta name="description" content="Notes by Luka Finžgar on agents, mobile products and useful experiments." data-content-en="Notes by Luka Finžgar on agents, mobile products and useful experiments." data-content-de="Notizen von Luka Finžgar über Agenten, mobile Produkte und nützliche Experimente." data-content-sl="Zapisi Luke Finžgarja o agentih, mobilnih izdelkih in uporabnih poskusih.">
+    {% endif %}
     <meta name="theme-color" content="#f4e4cf" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#2f2119" media="(prefers-color-scheme: dark)">
-    <title>{% if page.title %}{{ page.title }} - {% endif %}Luka Finžgar</title>
+    {% if page.layout == 'post' %}
+    <title>{{ page.title | escape }} - Luka Finžgar</title>
+    {% else %}
+    <title data-en="Blog - Luka Finžgar" data-de="Blog - Luka Finžgar" data-sl="Blog - Luka Finžgar">Blog - Luka Finžgar</title>
+    {% endif %}
     <link rel="icon" type="image/png" sizes="32x32" href="{{ '/favicon-32x32.png' | relative_url }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ '/favicon-16x16.png' | relative_url }}">
     <link rel="shortcut icon" href="{{ '/favicon.ico' | relative_url }}">
-    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title | xml_escape }} RSS" href="{{ '/rss.xml' | absolute_url }}">
     <link rel="alternate" type="application/atom+xml" title="{{ site.title | xml_escape }} Atom" href="{{ '/feed.xml' | absolute_url }}">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;650;800;900&display=swap" rel="stylesheet">
-    <script src="{{ '/script.js' | relative_url }}" defer></script>
+    <script src="{{ '/script.js' | relative_url }}?v={{ site.time | date: '%s' }}" defer></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-D9BY20S9MQ"></script>
     <script>
@@ -26,24 +34,23 @@
     </script>
 </head>
 <body>
-    <nav class="navbar card-nav" aria-label="Primary navigation">
+    <nav class="navbar card-nav" aria-label="Primary navigation" data-aria-label-en="Primary navigation" data-aria-label-de="Hauptnavigation" data-aria-label-sl="Glavna navigacija">
         <div class="nav-content">
             <div class="nav-links">
-                <a href="{{ '/#projects' | relative_url }}" data-en="Projects" data-de="Projekte">Projects</a>
-                <a href="{{ '/#expertise' | relative_url }}" data-en="Expertise" data-de="Expertise">Expertise</a>
-                <a href="{{ '/blog/' | relative_url }}" data-en="Blog" data-de="Blog">Blog</a>
-                <a href="{{ '/#contact' | relative_url }}" data-en="Contact" data-de="Kontakt">Contact</a>
+                <a href="{{ '/#projects' | relative_url }}" data-en="Projects" data-sl="Projekti" data-de="Projekte">Projects</a>
+                <a href="{{ '/#expertise' | relative_url }}" data-en="Expertise" data-sl="Znanja" data-de="Expertise">Expertise</a>
+                <a href="{{ '/blog/' | relative_url }}" data-en="Blog" data-sl="Blog" data-de="Blog">Blog</a>
+                <a href="{{ '/#contact' | relative_url }}" data-en="Contact" data-sl="Stik" data-de="Kontakt">Contact</a>
             </div>
-            <div class="nav-controls{% if page.hide_language_switcher or page.layout == 'post' %} nav-controls--solo{% endif %}" aria-label="Display controls">
-                {% unless page.hide_language_switcher or page.layout == 'post' %}
-                <button id="en-lang" class="lang-btn" type="button" aria-label="Switch to English">EN</button>
-                <button id="de-lang" class="lang-btn" type="button" aria-label="Switch to German">DE</button>
-                {% endunless %}
+            <div class="nav-controls" aria-label="Display controls" data-aria-label-en="Display controls" data-aria-label-de="Anzeigeeinstellungen" data-aria-label-sl="Nastavitve prikaza">
+                <button id="en-lang" class="lang-btn" type="button" aria-label="Switch to English" data-aria-label-en="Switch to English" data-aria-label-de="Zu Englisch wechseln" data-aria-label-sl="Preklopi v angleščino">EN</button>
+                <button id="de-lang" class="lang-btn" type="button" aria-label="Switch to German" data-aria-label-en="Switch to German" data-aria-label-de="Zu Deutsch wechseln" data-aria-label-sl="Preklopi v nemščino">DE</button>
+                <button id="sl-lang" class="lang-btn" type="button" aria-label="Switch to Slovenian" data-aria-label-en="Switch to Slovenian" data-aria-label-de="Zu Slowenisch wechseln" data-aria-label-sl="Preklopi v slovenščino">SL</button>
                 <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle dark mode">
-                    <svg class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" class="icon icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M12 17a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-12a1 1 0 0 1-1-1V2a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1zm0 18a1 1 0 0 1-1-1v-2a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1zM4 13H2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2zm18 0h-2a1 1 0 1 1 0-2h2a1 1 0 1 1 0 2zM5.64 7.05 4.22 5.64a1 1 0 1 1 1.42-1.42l1.41 1.42a1 1 0 0 1-1.41 1.41zm12.72 12.73-1.41-1.42a1 1 0 0 1 1.41-1.41l1.42 1.41a1 1 0 0 1-1.42 1.42zM18.36 7.05a1 1 0 0 1-1.41-1.41l1.41-1.42a1 1 0 1 1 1.42 1.42l-1.42 1.41zM5.64 19.78a1 1 0 0 1-1.42-1.42l1.42-1.41a1 1 0 0 1 1.41 1.41l-1.41 1.42z"/>
                     </svg>
-                    <svg class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <svg aria-hidden="true" class="icon icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M12.1 22h-.9a10 10 0 0 1 0-19.9 1 1 0 0 1 .9 1.6 6 6 0 0 0 8.4 8.4 1 1 0 0 1 1.6.9A10 10 0 0 1 12.1 22zM9.3 4.4a8 8 0 1 0 10.2 10.2A8 8 0 0 1 9.3 4.4z"/>
                     </svg>
                 </button>

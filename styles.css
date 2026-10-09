@@ -1432,6 +1432,8 @@ body::before {
     .card-nav .nav-content {
         justify-content: center;
         flex-wrap: wrap;
+        flex-direction: column;
+        gap: 6px;
     }
     .card-nav .nav-links {
         position: static;
@@ -1462,7 +1464,9 @@ body::before {
     .blog-list,
     .post { width: min(1180px, calc(100% - 24px)); }
     .blog-list > h1,
-    .post-header h1 { font-size: 54px; }
+    .post-header h1 { font-size: 54px; overflow-wrap: anywhere; }
+    :root[lang="sl"] .blog-list > h1 { font-size: clamp(38px, 10vw, 54px); }
+    .post-header h1 { font-size: clamp(38px, 10vw, 54px); }
     .post-card-shell { border-radius: 20px; }
     .post-eyebrow {
         align-items: center;

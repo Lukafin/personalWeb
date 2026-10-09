@@ -5,10 +5,10 @@ layout: default
   <div class="post-card-shell">
     <header class="post-header post-hero-card">
       <div class="post-eyebrow">
-        <a href="{{ '/blog/' | relative_url }}" class="back-to-posts" data-en="← Back to Posts" data-de="← Zurück zu Beiträgen">← Back to Posts</a>
-        <p class="meta">{{ page.date | date_to_string }}</p>
+        <a href="{{ '/blog/' | relative_url }}" class="back-to-posts" data-en="← Back to Posts" data-sl="← Nazaj na objave" data-de="← Zurück zu Beiträgen">← Back to Posts</a>
+        <time class="meta" datetime="{{ page.date | date_to_xmlschema }}" data-localized-date>{{ page.date | date_to_string }}</time>
       </div>
-      <h1>{{ page.title }}</h1>
+      <h1 lang="{{ page.lang | default: 'en' }}">{{ page.title }}</h1>
     </header>
 
     <div class="post-content-wrapper">
@@ -23,17 +23,17 @@ layout: default
       {% endfor %}
       {% if podcast_file_exists %}
       <div class="podcast-player">
-        <h3 data-en="Listen to this post:" data-de="Diesen Beitrag anhören:">Listen to this post:</h3>
+        <h3 data-en="Listen to this post:" data-sl="Prisluhni objavi:" data-de="Diesen Beitrag anhören:">Listen to this post:</h3>
         <audio controls>
           <source src="{{ site.baseurl }}/{{ page.podcast_link }}" type="audio/mpeg">
-          Your browser does not support the audio element.
+          <span data-en="Your browser does not support audio playback." data-de="Ihr Browser unterstützt keine Audiowiedergabe." data-sl="Vaš brskalnik ne podpira predvajanja zvoka.">Your browser does not support audio playback.</span>
         </audio>
-        <a href="{{ site.baseurl }}/{{ page.podcast_link }}" download data-en="Download podcast" data-de="Podcast herunterladen">Download podcast</a>
+        <a href="{{ site.baseurl }}/{{ page.podcast_link }}" download data-en="Download podcast" data-sl="Prenesi zvočni posnetek" data-de="Podcast herunterladen">Download podcast</a>
       </div>
       {% endif %}
       {% endif %}
 
-      <div class="entry">
+      <div class="entry" lang="{{ page.lang | default: 'en' }}">
         {{ content }}
       </div>
     </div>

@@ -21,7 +21,13 @@ function applyTheme(theme) {
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
         themeToggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
-        themeToggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+        const labels = {
+            en: ['Switch to dark mode', 'Switch to light mode'],
+            de: ['Zum dunklen Modus wechseln', 'Zum hellen Modus wechseln'],
+            sl: ['Preklopi na temni način', 'Preklopi na svetli način']
+        };
+        const lang = document.documentElement.lang;
+        themeToggle.setAttribute('aria-label', (labels[lang] || labels.en)[theme === 'dark' ? 1 : 0]);
     }
 }
 
@@ -119,7 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     textarea.remove();
                 }
                 const savedLanguage = localStorage.getItem('language') || 'en';
-                const copiedLabel = savedLanguage === 'de' ? 'Kopiert' : 'Copied';
+                const copiedLabel = {en: 'Copied', de: 'Kopiert', sl: 'Kopirano'}[savedLanguage] || 'Copied';
                 const copiedText = aiCopy.querySelector('.ai-copy-label');
                 if (copiedText) {
                     copiedText.textContent = copiedLabel;
@@ -157,40 +163,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Initialize language switching
-    const langButtons = {
-        en: document.getElementById('en-lang'),
-        de: document.getElementById('de-lang')
-    };
-
-    if (langButtons.en && langButtons.de) {
-        Object.keys(langButtons).forEach(lang => {
-            langButtons[lang].addEventListener('click', () => setLanguage(lang));
-        });
-
-        // Set initial language
-        const savedLanguage = localStorage.getItem('language') || 'en';
-        setLanguage(savedLanguage);
-    }
+    ['en', 'de', 'sl'].forEach(lang => {
+        document.getElementById(`${lang}-lang`)?.addEventListener('click', () => setLanguage(lang));
+    });
+    setLanguage(localStorage.getItem('language') || 'en');
 });
 
 // Language switching functionality
 function setLanguage(lang) {
-    const supportedLanguages = ['en', 'de'];
+    const supportedLanguages = ['en', 'de', 'sl'];
     if (!supportedLanguages.includes(lang)) {
         lang = 'en';
     }
 
     const langButtons = {
         en: document.getElementById('en-lang'),
-        de: document.getElementById('de-lang')
+        de: document.getElementById('de-lang'),
+        sl: document.getElementById('sl-lang')
     };
-
-    if (!langButtons.en || !langButtons.de) return;
 
     document.documentElement.setAttribute('lang', lang);
 
     // Update active button state
     Object.keys(langButtons).forEach(key => {
+        if (!langButtons[key]) return;
         const isActive = key === lang;
         langButtons[key].classList.toggle('active', isActive);
         langButtons[key].setAttribute('aria-pressed', isActive ? 'true' : 'false');
@@ -199,14 +195,32 @@ function setLanguage(lang) {
     // Store selected language
     localStorage.setItem('language', lang);
 
-    // Update text for all elements with a data-en or data-de attribute
-    document.querySelectorAll('[data-en], [data-de]').forEach(el => {
+    // Text translations stay on leaf elements so icons and nested markup survive.
+    document.querySelectorAll('[data-en], [data-de], [data-sl]').forEach(el => {
         if (el.getAttribute('data-translate') === 'false') return;
         const translation = el.getAttribute(`data-${lang}`);
         if (translation) {
             el.textContent = translation;
         }
     });
+
+    // Translate attributes without replacing the element's contents.
+    ['aria-label', 'content', 'href', 'download'].forEach(attribute => {
+        document.querySelectorAll(`[data-${attribute}-${lang}]`).forEach(el => {
+            el.setAttribute(attribute, el.getAttribute(`data-${attribute}-${lang}`));
+        });
+    });
+
+    const locale = {en: 'en-GB', de: 'de-DE', sl: 'sl-SI'}[lang];
+    document.querySelectorAll('[data-localized-date]').forEach(el => {
+        const date = new Date(el.getAttribute('datetime'));
+        if (!Number.isNaN(date.getTime())) {
+            el.textContent = new Intl.DateTimeFormat(locale, {
+                day: 'numeric', month: 'short', year: 'numeric'
+            }).format(date);
+        }
+    });
+    applyTheme(document.documentElement.getAttribute('data-theme') || 'light');
 
     const aiCopy = document.getElementById('ai-copy');
     if (aiCopy) {

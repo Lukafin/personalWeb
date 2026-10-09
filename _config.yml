@@ -1,5 +1,5 @@
-title: Luka Finžgar's Blog
-description: Mobile Development Expert with 15 years of experience in iOS and Android development
+title: Luka Finžgar | Blog
+description: Senior Software Developer with 16 years of iOS and Android experience, building useful products, agent systems and development automation.
 baseurl: ""
 url: "https://lukafinzgar.com"
 # Build settings
@@ -10,10 +10,11 @@ plugins:
 
 # Exclude from processing
 exclude:
+  - tools/
   - Gemfile
   - Gemfile.lock
   - node_modules
   - vendor/bundle/
   - vendor/cache/
   - vendor/gems/
-  - vendor/ruby/ 
+  - vendor/ruby/

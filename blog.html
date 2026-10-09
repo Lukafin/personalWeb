@@ -3,18 +3,18 @@ layout: default
 title: Blog
 ---
 <div class="blog-list">
-    <h1>All Blog Posts</h1>
+    <h1 data-en="All Blog Posts" data-de="Alle Blogbeiträge" data-sl="Vse objave">All Blog Posts</h1>
     {% for post in site.posts %}
     <article class="blog-post">
-        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <h2 lang="{{ post.lang | default: 'en' }}"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
         <div class="blog-post-meta">
-            <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+            <time data-localized-date datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
             {% if post.categories %}
-                <span> | Categories: {{ post.categories | join: ", " }}</span>
+                <span> | <span data-en="Categories:" data-de="Kategorien:" data-sl="Kategorije:">Categories:</span> <span lang="en">{{ post.categories | join: ", " }}</span></span>
             {% endif %}
         </div>
-        <p>{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
-        <a href="{{ post.url | relative_url }}" class="read-more">Read more</a>
+        <p lang="{{ post.lang | default: 'en' }}">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+        <a href="{{ post.url | relative_url }}" class="read-more" data-en="Read more" data-de="Weiterlesen" data-sl="Preberi več">Read more</a>
     </article>
     {% endfor %}
 </div> 

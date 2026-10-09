@@ -1,22 +1,21 @@
 ---
 layout: default
 title: Blog
-hide_language_switcher: true
 ---
 
 <div class="blog-list">
-    <h1 data-en="Latest Blog Posts" data-de="Neueste Blogbeiträge">Latest Blog Posts</h1>
+    <h1 data-en="Latest Blog Posts" data-sl="Najnovejše objave" data-de="Neueste Blogbeiträge">Latest Blog Posts</h1>
 
-    <div class="blog-actions" aria-label="Blog subscription options">
-      <a class="rss-link" href="{{ '/rss.xml' | relative_url }}" type="application/rss+xml">RSS feed</a>
+    <div class="blog-actions" aria-label="Blog subscription options" data-aria-label-en="Blog subscription options" data-aria-label-de="Blog abonnieren" data-aria-label-sl="Možnosti naročanja na blog">
+      <a class="rss-link" href="{{ '/rss.xml' | relative_url }}" type="application/rss+xml" data-en="RSS feed" data-de="RSS-Feed" data-sl="Vir RSS">RSS feed</a>
     </div>
 
     <ul>
       {% for post in site.posts %}
         <li>
-          <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
-          <p class="post-date">{{ post.date | date_to_string }}</p>
-          <div class="post-excerpt">{{ post.excerpt | strip_html | truncate: 180 }}</div>
+          <h2 lang="{{ post.lang | default: 'en' }}"><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+          <time class="post-date" datetime="{{ post.date | date_to_xmlschema }}" data-localized-date>{{ post.date | date_to_string }}</time>
+          <div class="post-excerpt" lang="{{ post.lang | default: 'en' }}">{{ post.excerpt | strip_html | truncate: 180 }}</div>
         </li>
       {% endfor %}
     </ul> 
