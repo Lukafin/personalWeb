@@ -1,68 +1,149 @@
 {
   "name": "Luka Finžgar",
-  "position": "Višji razvijalec programske opreme",
+  "position": "Izkušen razvijalec programske opreme",
   "eyebrow": "Programska oprema / Sistemi / Izdelki",
   "contacts": [
-    "Agentski sistemi z UI | Mobilni izdelki | Avtomatizacija razvoja",
+    "Agenti umetne inteligence | Mobilne aplikacije | Avtomatizacija razvoja",
     "Kranj, Slovenija | +386 41 922 674 | <link href=\"mailto:lukafin@gmail.com\" color=\"#225C5D\">lukafin@gmail.com</link>",
     "<link href=\"https://lukafinzgar.com\" color=\"#225C5D\">lukafinzgar.com</link> | <link href=\"https://github.com/Lukafin\" color=\"#225C5D\">github.com/Lukafin</link> | <link href=\"https://www.linkedin.com/in/luka-fin%C5%BEgar-55608831\" color=\"#225C5D\">LinkedIn</link>"
   ],
   "profile_heading": "Profil",
-  "profile": "Razvijalec programske opreme s 16 leti izkušenj z iOS in Androidom, tudi kot soustanovitelj izdelkov ter razvijalec pri Toshlu in Netceteri. V zadnjih treh letih v osebnih projektih povezujem umetno inteligenco z mobilnimi aplikacijami, zalednimi storitvami, usklajevanjem agentov in avtomatizacijo razvoja. Moja prednost je povezati te dele v uporabne sisteme, katerih delovanje je mogoče preveriti.",
-  "themes_heading": "Trenutna zanimanja in raziskovanja",
+  "profile": "Izkušen razvijalec programske opreme s 16 leti izkušenj z iOS in Androidom, tudi kot soustanovitelj ter razvijalec pri Toshlu in Netceteri. Zadnja tri leta v osebnih projektih povezujem umetno inteligenco z mobilnimi aplikacijami in strežniškimi storitvami, usklajujem agente in avtomatiziram razvoj. Moja prednost je, da te dele povežem v uporabne sisteme, ki jih je mogoče pregledati in preveriti.",
+  "themes_heading": "Kaj me zanima in kaj raziskujem",
   "themes": [
     {
       "title": "Usklajevanje agentov in sodelovanje",
       "meta": "Osebna projekta | Conductor in Roj",
       "items": [
-        [true, "<b>Conductor:</b> Razvil sem skupni vmesnik za iOS, Android in namizne računalnike z zaledjem Python/FastAPI za upravljanje agentov. Raziskoval sem ponavljajoče se naloge, glasovne zahteve, veščine agentov in prikaz na Android TV."],
-        [true, "<b>Roj:</b> Razvil sem imenik rojev z ujemanjem zmogljivosti, preverjanjem usposobljenosti in človeškim pregledom. Štirje trenutni roji preverjajo uporabniško izkušnjo javnih spletnih strani, pripravljajo izobraževalne infografike o ljudeh, preverjajo dejstva v novicah in naslovih ter spremljajo uresničevanje volilnih obljub na podlagi dokazov."],
-        [true, "V Roj sem dodal strukturirano predajo nalog in pregled dokazov ter začetno poročanje o integriteti z začasno karanteno, revizijsko sledjo in predajo človeku. <link href=\"https://roj.world\" color=\"#225C5D\">roj.world</link>"]
+        [
+          true,
+          "<b>Conductor:</b> Razvil sem skupni vmesnik za iOS, Android in namizne računalnike s strežniškim delom (Python/FastAPI) za upravljanje agentov. Raziskoval sem ponavljajoče se naloge, glasovna navodila, veščine agentov in prikaz na Android TV."
+        ],
+        [
+          true,
+          "<b>Roj:</b> Razvil sem imenik rojev, ki agente povezuje z ustreznimi nalogami, preverja njihove sposobnosti in vključuje ročni pregled. Štirje trenutni roji preverjajo uporabniško izkušnjo javnih spletnih strani, pripravljajo izobraževalne infografike o ljudeh, preverjajo dejstva v novicah in naslovih ter spremljajo uresničevanje volilnih obljub na podlagi dokazov."
+        ],
+        [
+          true,
+          "V Roj sem dodal predajo nalog po enotni strukturi in preverjanje dokazov ter prvo podporo za prijavo sumov nepravilnosti z začasno karanteno, beleženjem dejanj in predajo v ročni pregled. <link href=\"https://roj.world\" color=\"#225C5D\">roj.world</link>"
+        ]
       ]
     },
     {
-      "title": "Zdravstvene raziskave z UI in mobilni izdelki",
+      "title": "Zdravstvene raziskave z AI in mobilne aplikacije",
       "meta": "Osebni projekt | Health Research Companion",
       "items": [
-        [true, "Razvil sem agente, ki redno raziskujejo dermatitis moje hčerke ter izpostavljajo nove raziskave in obetavne terapije za nadaljnji pregled."],
-        [true, "Razvil sem mobilno aplikacijo za iskanje zdravstvenih raziskav s pomočjo UI ter ustvarjanje zvočnih razlag obstoječih diagnoz in novih raziskav."],
-        [true, "Objavil sem beta različici za Android (Firebase App Testing) in iOS (TestFlight). Aplikacija pomaga pri raziskovanju informacij in pripravi na pogovor z zdravnikom."]
+        [
+          true,
+          "Razvil sem agente, ki redno raziskujejo dermatitis moje hčerke ter poiščejo nove raziskave in obetavne terapije za nadaljnji pregled."
+        ],
+        [
+          true,
+          "Razvil sem mobilno aplikacijo, ki s pomočjo AI poišče zdravstvene raziskave in pripravi zvočne razlage obstoječih diagnoz ter novih raziskav."
+        ],
+        [
+          true,
+          "Objavil sem beta različici za Android (Firebase App Testing) in iOS (TestFlight). Aplikacija pomaga uporabnikom poiskati informacije in se pripraviti na pogovor z zdravnikom."
+        ]
       ]
     },
     {
       "title": "Avtomatizacija razvoja",
-      "meta": "Lastni delovni procesi | GitHub Actions, agenti za programiranje, povezave s Sentryjem",
+      "meta": "Lastni delovni postopki | GitHub Actions, agenti za programiranje, povezave s Sentryjem",
       "items": [
-        [true, "Vzpostavil sem načrtovane procese za raziskovanje, dokumentiranje in vzdrževanje, ki ugotovitve pretvorijo v popravke, pripravljene z agenti."],
-        [true, "Opozorila iz Sentryja sem povezal z agenti za reprodukcijo napak in predlaganje popravkov; ohranil sem človeški pregled zahtev za združitev kode."]
+        [
+          true,
+          "Vzpostavil sem redne postopke raziskovanja, dokumentiranja in vzdrževanja. Na podlagi ugotovitev agenti pripravijo popravke."
+        ],
+        [
+          true,
+          "Opozorila iz Sentryja sem povezal z agenti, ki ponovijo napake in predlagajo popravke. Ohranil sem ročni pregled sprememb pred združitvijo kode."
+        ]
       ]
     },
     {
-      "title": "Novi načini interakcije",
+      "title": "Novi načini uporabe vmesnikov",
       "meta": "Stalno zanimanje | MCP Apps in A2UI",
       "items": [
-        [false, "Raziskujem, kako bi agenti po potrebi prikazali vmesnike za posamezne naloge ter povezali pogovor z dinamično ustvarjenim uporabniškim vmesnikom. Spremljam MCP Apps in A2UI kot nova pristopa v tej smeri."]
+        [
+          false,
+          "Raziskujem, kako bi agenti po potrebi prikazali vmesnike za posamezne naloge in povezali pogovor s sproti ustvarjenimi uporabniškimi vmesniki. Spremljam MCP Apps in A2UI kot nova pristopa na tem področju."
+        ]
       ]
     }
   ],
   "blog": "Podrobnosti projektov in razvojni zapisi: <link href=\"https://lukafinzgar.com/blog/\" color=\"#225C5D\">lukafinzgar.com/blog/</link>",
-  "career_eyebrow": "Izkušnje / Ozadje",
+  "career_eyebrow": "Izkušnje / Znanja",
   "career_heading": "Delovne izkušnje",
-  "career_intro": "Razvoj mobilnih aplikacij, skrb za izdelke in razvojna praksa",
+  "career_intro": "Razvoj mobilnih aplikacij, skrb za izdelke in razvojne izkušnje",
   "roles": [
-    ["Netcetera", "Razvijalec mobilnih aplikacij | Ljubljana", "dec. 2022 - danes", "Vzdržujem aplikacije za iOS in Android na več projektih. V obstoječi projekt sem uvedel Kotlin Multiplatform in raziskoval uporabo agentov UI za izboljšanje razvojnega procesa."],
-    ["Toshl Finance", "Razvijalec mobilnih aplikacij", "dec. 2018 - danes", "Razvijal sem aplikacijo Toshl za upravljanje osebnih financ na iOS in Androidu."],
-    ["3fs", "Razvijalec mobilnih aplikacij", "mar. 2017 - dec. 2018", "Razvijal sem aplikacije za Android in iOS za različne naročnike."],
-    ["Umwerk GmbH", "Razvijalec za iOS", "apr. 2016 - jan. 2017", "Sodeloval sem pri razvoju YOU, aplikacije za pretočni video na iOS za nemško televizijsko hišo RTL."],
-    ["CarLock", "Soustanovitelj in razvijalec mobilnih aplikacij", "jan. 2013 - nov. 2015", "Načrtoval in razvijal sem aplikacije za iOS in Android za povezani avtomobil, s prikazom sloga vožnje in podatkov iz naprave v vozilu."],
-    ["Xooltime, Inc.", "Razvijalec za Android", "mar. 2013 - feb. 2014", "Razvijal sem učno aplikacijo za projekt, pri katerem so učenci namesto knjig in učbenikov uporabljali tablice."],
-    ["3fs", "Razvijalec za iOS", "jun. 2012 - nov. 2012", "Razvil sem prototip aplikacije Povio za iOS."],
-    ["RS5 / KjeSiTaksi", "Soustanovitelj in razvijalec mobilnih aplikacij", "sep. 2011 - jun. 2012", "Načrtoval in razvijal sem eno prvih slovenskih aplikacij za naročanje taksija na iOS in Androidu."],
-    ["Odpiralni Časi", "Razvijalec mobilnih aplikacij", "jan. 2011 - maj 2012", "Razvijal sem aplikacije za Android in iOS z Javo in Objective-C."]
+    [
+      "Netcetera",
+      "Razvijalec mobilnih aplikacij | Ljubljana",
+      "dec. 2022 - danes",
+      "Vzdržujem aplikacije za iOS in Android v več projektih. V obstoječi projekt sem uvedel Kotlin Multiplatform in raziskoval uporabo agentov umetne inteligence za izboljšanje poteka razvoja."
+    ],
+    [
+      "Toshl Finance",
+      "Razvijalec mobilnih aplikacij",
+      "dec. 2018 - danes",
+      "Razvijal sem aplikacijo Toshl za upravljanje osebnih financ na iOS in Androidu."
+    ],
+    [
+      "3fs",
+      "Razvijalec mobilnih aplikacij",
+      "mar. 2017 - dec. 2018",
+      "Razvijal sem aplikacije za Android in iOS za različne naročnike."
+    ],
+    [
+      "Umwerk GmbH",
+      "Razvijalec za iOS",
+      "apr. 2016 - jan. 2017",
+      "Sodeloval sem pri razvoju YOU, aplikacije za pretočni video na iOS za nemško televizijsko hišo RTL."
+    ],
+    [
+      "CarLock",
+      "Soustanovitelj in razvijalec mobilnih aplikacij",
+      "jan. 2013 - nov. 2015",
+      "Načrtoval in razvijal sem aplikacije za iOS in Android za povezani avtomobil, s prikazom sloga vožnje in podatkov iz naprave v vozilu."
+    ],
+    [
+      "Xooltime, Inc.",
+      "Razvijalec za Android",
+      "mar. 2013 - feb. 2014",
+      "Razvijal sem učno aplikacijo za projekt, pri katerem so učenci namesto knjig in učbenikov uporabljali tablice."
+    ],
+    [
+      "3fs",
+      "Razvijalec za iOS",
+      "jun. 2012 - nov. 2012",
+      "Razvil sem prototip aplikacije Povio za iOS."
+    ],
+    [
+      "RS5 / KjeSiTaksi",
+      "Soustanovitelj in razvijalec mobilnih aplikacij",
+      "sep. 2011 - jun. 2012",
+      "Načrtoval in razvijal sem eno prvih slovenskih aplikacij za naročanje taksija na iOS in Androidu."
+    ],
+    [
+      "Odpiralni Časi",
+      "Razvijalec mobilnih aplikacij",
+      "jan. 2011 - maj 2012",
+      "Razvijal sem aplikacije za Android in iOS z Javo in Objective-C."
+    ]
   ],
   "sections": [
-    ["Izobrazba", "<b>Diploma (BSc) iz računalništva in informatike</b> | Univerza v Ljubljani<br/>Fakulteta za računalništvo in informatiko | 2003 - 2010"],
-    ["Razvojna znanja", "<b>Mobilni razvoj:</b> Swift, Objective-C, Kotlin, Java, Jetpack Compose, Kotlin Multiplatform.<br/><b>Agentski sistemi:</b> usklajevanje, veščine agentov, pregled dokazov in človeška odobritev.<br/><b>Izvedba:</b> Git, Bitrise CI, GitHub Actions, avtomatizacija in razvoj izdelkov."],
-    ["Jeziki in zanimanja", "<b>Jeziki:</b> slovenščina (materni jezik); angleščina (C1-C2); nemščina (osnovno).<br/><b>Zanimanja:</b> računalništvo, vpeto v vsakdanje okolje, uporabni sistemi v ozadju ter mesta, zasnovana za hojo in kolesarjenje."]
+    [
+      "Izobrazba",
+      "<b>Diploma (BSc) iz računalništva in informatike</b> | Univerza v Ljubljani<br/>Fakulteta za računalništvo in informatiko | 2003 - 2010"
+    ],
+    [
+      "Razvojna znanja",
+      "<b>Mobilni razvoj:</b> Swift, Objective-C, Kotlin, Java, Jetpack Compose, Kotlin Multiplatform.<br/><b>Sistemi z agenti:</b> usklajevanje, veščine agentov, preverjanje dokazov in ročna odobritev.<br/><b>Razvoj in izdaje:</b> Git, Bitrise CI, GitHub Actions, avtomatizacija in razvoj izdelkov."
+    ],
+    [
+      "Jeziki in zanimanja",
+      "<b>Jeziki:</b> slovenščina (materni jezik); angleščina (C1-C2); nemščina (osnovno znanje).<br/><b>Zanimanja:</b> tehnologija, ki se neopazno vključi v vsakdan, uporabni sistemi v ozadju ter mesta, prilagojena pešcem in kolesarjem."
+    ]
   ]
 }
